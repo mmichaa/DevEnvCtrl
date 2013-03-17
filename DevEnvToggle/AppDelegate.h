@@ -23,7 +23,7 @@
     AppServiceHelper *serviceHelperProxy;
 }
 
-- (IBAction)onClick:(id)sender;
+- (void)menuWillOpen:(NSMenu *)menu;
 - (IBAction)onToggle:(id)sender;
 - (IBAction)onToggleItem:(id)sender;
 

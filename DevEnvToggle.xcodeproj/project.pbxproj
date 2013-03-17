@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8637DF9516EDF6DD00107C4C /* xcode-draw-16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 8637DF9416EDF6DD00107C4C /* xcode-draw-16x16.png */; };
+		86490EFF16F67FFF007B7E51 /* xcode-draw-256x256.icns in Resources */ = {isa = PBXBuildFile; fileRef = 86490EFE16F67FFF007B7E51 /* xcode-draw-256x256.icns */; };
 		8660B7E316ECCE3C00DA035F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8660B7E216ECCE3C00DA035F /* Cocoa.framework */; };
 		8660B7ED16ECCE3C00DA035F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8660B7EB16ECCE3C00DA035F /* InfoPlist.strings */; };
 		8660B7EF16ECCE3C00DA035F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8660B7EE16ECCE3C00DA035F /* main.m */; };
@@ -16,7 +17,6 @@
 		8660B7F916ECCE3C00DA035F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8660B7F716ECCE3C00DA035F /* MainMenu.xib */; };
 		868882EC16F53913007F1270 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882EB16F53913007F1270 /* Foundation.framework */; };
 		868882EF16F53913007F1270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 868882EE16F53913007F1270 /* main.m */; };
-		868882F316F53913007F1270 /* DevEnvHelper.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 868882F216F53913007F1270 /* DevEnvHelper.1 */; };
 		868882FA16F53FE6007F1270 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882F916F53FE6007F1270 /* Security.framework */; };
 		868882FC16F53FF8007F1270 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882FB16F53FF8007F1270 /* ServiceManagement.framework */; };
 		8688830016F54538007F1270 /* com.taktsoft.DevEnvHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 868882EA16F53913007F1270 /* com.taktsoft.DevEnvHelper */; };
@@ -36,16 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		868882E816F53913007F1270 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-				868882F316F53913007F1270 /* DevEnvHelper.1 in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 		868882FF16F54523007F1270 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		8637DF9416EDF6DD00107C4C /* xcode-draw-16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xcode-draw-16x16.png"; sourceTree = "<group>"; };
+		86490EFE16F67FFF007B7E51 /* xcode-draw-256x256.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "xcode-draw-256x256.icns"; sourceTree = "<group>"; };
 		8660B7DF16ECCE3C00DA035F /* DevEnvToggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevEnvToggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8660B7E216ECCE3C00DA035F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8660B7E516ECCE3C00DA035F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -77,7 +68,6 @@
 		868882EB16F53913007F1270 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		868882EE16F53913007F1270 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		868882F116F53913007F1270 /* DevEnvHelper-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DevEnvHelper-Prefix.pch"; sourceTree = "<group>"; };
-		868882F216F53913007F1270 /* DevEnvHelper.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = DevEnvHelper.1; sourceTree = "<group>"; };
 		868882F716F539A4007F1270 /* DevEnvHelper-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DevEnvHelper-Info.plist"; sourceTree = "<group>"; };
 		868882F816F539A4007F1270 /* DevEnvHelper-Launchd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DevEnvHelper-Launchd.plist"; sourceTree = "<group>"; };
 		868882F916F53FE6007F1270 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -114,6 +104,7 @@
 		8660B7D616ECCE3C00DA035F = {
 			isa = PBXGroup;
 			children = (
+				86490EFE16F67FFF007B7E51 /* xcode-draw-256x256.icns */,
 				8660B7E816ECCE3C00DA035F /* DevEnvToggle */,
 				868882ED16F53913007F1270 /* DevEnvHelper */,
 				8660B7E116ECCE3C00DA035F /* Frameworks */,
@@ -185,7 +176,6 @@
 				86C98B9B16F61A7C00775447 /* AppServiceHelper.h */,
 				86C98B9C16F61A7C00775447 /* AppServiceHelper.m */,
 				868882EE16F53913007F1270 /* main.m */,
-				868882F216F53913007F1270 /* DevEnvHelper.1 */,
 				868882F016F53913007F1270 /* Supporting Files */,
 			);
 			path = DevEnvHelper;
@@ -229,7 +219,6 @@
 			buildPhases = (
 				868882E616F53913007F1270 /* Sources */,
 				868882E716F53913007F1270 /* Frameworks */,
-				868882E816F53913007F1270 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -277,6 +266,7 @@
 				8660B7F916ECCE3C00DA035F /* MainMenu.xib in Resources */,
 				8637DF9516EDF6DD00107C4C /* xcode-draw-16x16.png in Resources */,
 				8688830316F553E3007F1270 /* DevEnvToggle-Services.plist in Resources */,
+				86490EFF16F67FFF007B7E51 /* xcode-draw-256x256.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
