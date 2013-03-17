@@ -19,6 +19,8 @@
 		<string>/Library/LaunchDaemons</string>
 		<key>diskimage</key>
 		<dict>
+			<key>label</key>
+			<string>MySQL-Encrypted-Data</string>
 			<key>path</key>
 			<string>/Users/micha/Library/Application Support/MySQL/EncDataImage.sparsebundle</string>
 			<key>options</key>

@@ -1,5 +1,5 @@
 //
-//  AppService.h
+//  AppServiceHelper.h
 //  DevEnvToggle
 //
 //  Created by Michael Nowak on 17.03.13.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AppService : NSObject
+@interface AppServiceHelper : NSObject
 
 - (BOOL)status:(NSString *)job;
 - (BOOL)start:(NSString *)job;

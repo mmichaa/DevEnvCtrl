@@ -10,7 +10,7 @@
 #import <launch.h>
 #import <syslog.h>
 
-#import "AppService.h"
+#import "AppServiceHelper.h"
 
 int main(int argc, const char * argv[])
 {
@@ -29,7 +29,7 @@ int main(int argc, const char * argv[])
         NSMachPort *rp = [[NSMachPort alloc] initWithMachPort:mp];
         NSConnection *c = [NSConnection connectionWithReceivePort:rp sendPort:nil];
         
-        AppService *obj = [AppService new];
+        AppServiceHelper *obj = [AppServiceHelper new];
         [c setRootObject:obj];
         
         [[NSRunLoop currentRunLoop] run];

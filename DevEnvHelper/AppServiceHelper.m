@@ -1,14 +1,14 @@
 //
-//  AppService.m
+//  AppServiceHelper.m
 //  DevEnvToggle
 //
 //  Created by Michael Nowak on 17.03.13.
 //  Copyright (c) 2013 Michael Nowak. All rights reserved.
 //
 
-#import "AppService.h"
+#import "AppServiceHelper.h"
 
-@implementation AppService
+@implementation AppServiceHelper
 
 - (BOOL)status:(NSString *)job
 {

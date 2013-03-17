@@ -2033,6 +2033,14 @@
 					</object>
 					<int key="connectionID">546</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="692572869"/>
+						<reference key="destination" ref="976324537"/>
+					</object>
+					<int key="connectionID">553</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -3213,7 +3221,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">552</int>
+			<int key="maxID">553</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3221,10 +3229,15 @@
 					<string key="className">AppDelegate</string>
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="onClick:">id</string>
 						<string key="onToggle:">id</string>
 						<string key="onToggleItem:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="onClick:">
+							<string key="name">onClick:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="onToggle:">
 							<string key="name">onToggle:</string>
 							<string key="candidateClassName">id</string>
@@ -3235,8 +3248,6 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="serviceProxy">AppService</string>
-						<string key="services">NSArray</string>
 						<string key="statusImage">NSImage</string>
 						<string key="statusItem">NSStatusItem</string>
 						<string key="statusLightImage">NSImage</string>
@@ -3244,14 +3255,6 @@
 						<string key="window">NSWindow</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="serviceProxy">
-							<string key="name">serviceProxy</string>
-							<string key="candidateClassName">AppService</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="services">
-							<string key="name">services</string>
-							<string key="candidateClassName">NSArray</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="statusImage">
 							<string key="name">statusImage</string>
 							<string key="candidateClassName">NSImage</string>
@@ -3276,14 +3279,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/AppDelegate.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">AppService</string>
-					<string key="superclassName">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/AppService.h</string>
 					</object>
 				</object>
 			</array>

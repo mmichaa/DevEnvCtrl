@@ -14,15 +14,15 @@
 		8660B7F316ECCE3C00DA035F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8660B7F116ECCE3C00DA035F /* Credits.rtf */; };
 		8660B7F616ECCE3C00DA035F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8660B7F516ECCE3C00DA035F /* AppDelegate.m */; };
 		8660B7F916ECCE3C00DA035F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8660B7F716ECCE3C00DA035F /* MainMenu.xib */; };
-		868882E516F5386C007F1270 /* AppService.m in Sources */ = {isa = PBXBuildFile; fileRef = 868882E416F5386C007F1270 /* AppService.m */; };
 		868882EC16F53913007F1270 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882EB16F53913007F1270 /* Foundation.framework */; };
 		868882EF16F53913007F1270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 868882EE16F53913007F1270 /* main.m */; };
 		868882F316F53913007F1270 /* DevEnvHelper.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 868882F216F53913007F1270 /* DevEnvHelper.1 */; };
 		868882FA16F53FE6007F1270 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882F916F53FE6007F1270 /* Security.framework */; };
 		868882FC16F53FF8007F1270 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882FB16F53FF8007F1270 /* ServiceManagement.framework */; };
 		8688830016F54538007F1270 /* com.taktsoft.DevEnvHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 868882EA16F53913007F1270 /* com.taktsoft.DevEnvHelper */; };
-		8688830116F545A0007F1270 /* AppService.m in Sources */ = {isa = PBXBuildFile; fileRef = 868882E416F5386C007F1270 /* AppService.m */; };
 		8688830316F553E3007F1270 /* DevEnvToggle-Services.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8688830216F553E3007F1270 /* DevEnvToggle-Services.plist */; };
+		86C98B9A16F6073400775447 /* AppServiceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C98B9916F6073400775447 /* AppServiceData.m */; };
+		86C98B9D16F61A7C00775447 /* AppServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C98B9C16F61A7C00775447 /* AppServiceHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,8 +73,6 @@
 		8660B7F416ECCE3C00DA035F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8660B7F516ECCE3C00DA035F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8660B7F816ECCE3C00DA035F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		868882E316F5386C007F1270 /* AppService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppService.h; path = ../AppService.h; sourceTree = "<group>"; };
-		868882E416F5386C007F1270 /* AppService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppService.m; path = ../AppService.m; sourceTree = "<group>"; };
 		868882EA16F53913007F1270 /* com.taktsoft.DevEnvHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = com.taktsoft.DevEnvHelper; sourceTree = BUILT_PRODUCTS_DIR; };
 		868882EB16F53913007F1270 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		868882EE16F53913007F1270 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +83,10 @@
 		868882F916F53FE6007F1270 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		868882FB16F53FF8007F1270 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		8688830216F553E3007F1270 /* DevEnvToggle-Services.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DevEnvToggle-Services.plist"; sourceTree = "<group>"; };
+		86C98B9816F6073400775447 /* AppServiceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServiceData.h; sourceTree = "<group>"; };
+		86C98B9916F6073400775447 /* AppServiceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServiceData.m; sourceTree = "<group>"; };
+		86C98B9B16F61A7C00775447 /* AppServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServiceHelper.h; sourceTree = "<group>"; };
+		86C98B9C16F61A7C00775447 /* AppServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServiceHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,8 @@
 			children = (
 				8660B7F416ECCE3C00DA035F /* AppDelegate.h */,
 				8660B7F516ECCE3C00DA035F /* AppDelegate.m */,
+				86C98B9816F6073400775447 /* AppServiceData.h */,
+				86C98B9916F6073400775447 /* AppServiceData.m */,
 				8660B7F716ECCE3C00DA035F /* MainMenu.xib */,
 				8637DF9416EDF6DD00107C4C /* xcode-draw-16x16.png */,
 				8660B7E916ECCE3C00DA035F /* Supporting Files */,
@@ -178,8 +182,8 @@
 		868882ED16F53913007F1270 /* DevEnvHelper */ = {
 			isa = PBXGroup;
 			children = (
-				868882E316F5386C007F1270 /* AppService.h */,
-				868882E416F5386C007F1270 /* AppService.m */,
+				86C98B9B16F61A7C00775447 /* AppServiceHelper.h */,
+				86C98B9C16F61A7C00775447 /* AppServiceHelper.m */,
 				868882EE16F53913007F1270 /* main.m */,
 				868882F216F53913007F1270 /* DevEnvHelper.1 */,
 				868882F016F53913007F1270 /* Supporting Files */,
@@ -285,7 +289,7 @@
 			files = (
 				8660B7EF16ECCE3C00DA035F /* main.m in Sources */,
 				8660B7F616ECCE3C00DA035F /* AppDelegate.m in Sources */,
-				868882E516F5386C007F1270 /* AppService.m in Sources */,
+				86C98B9A16F6073400775447 /* AppServiceData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,8 +297,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8688830116F545A0007F1270 /* AppService.m in Sources */,
 				868882EF16F53913007F1270 /* main.m in Sources */,
+				86C98B9D16F61A7C00775447 /* AppServiceHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +495,7 @@
 				868882F616F53913007F1270 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
