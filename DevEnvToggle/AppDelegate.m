@@ -23,7 +23,6 @@
 */
 
 - (void)awakeFromNib{
-    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
     NSBundle *bundle = [NSBundle mainBundle];
     NSArray *icons = [[[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"Machine-Black" ofType:@"icns"]] representations];
     for (NSImageRep *iconRepresentation in icons) {
@@ -41,6 +40,7 @@
             break;
         }
     }
+    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
     [statusItem setImage:statusImage];
     [statusItem setAlternateImage:statusLightImage];
     [statusItem setMenu:statusMenu];

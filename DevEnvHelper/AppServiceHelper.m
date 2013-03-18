@@ -12,7 +12,7 @@
 
 - (BOOL)status:(NSString *)job
 {
-    NSDictionary *plist = (__bridge NSDictionary*)SMJobCopyDictionary(kSMDomainSystemLaunchd, (__bridge CFStringRef)@"com.taktsoft.DevEnvHelper");
+    NSDictionary *plist = (__bridge NSDictionary*)SMJobCopyDictionary(kSMDomainSystemLaunchd, (__bridge CFStringRef)job);
     if (plist) {
         return true;
     } else {
