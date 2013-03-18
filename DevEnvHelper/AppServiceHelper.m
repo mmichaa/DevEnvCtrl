@@ -12,6 +12,13 @@
 
 - (BOOL)status:(NSString *)job
 {
+    NSDictionary *plist = (__bridge NSDictionary*)SMJobCopyDictionary(kSMDomainSystemLaunchd, (__bridge CFStringRef)@"com.taktsoft.DevEnvHelper");
+    if (plist) {
+        return true;
+    } else {
+        return false;
+    }
+    /* old version of the check
     NSTask *task = [NSTask new];
     [task setLaunchPath:@"/bin/launchctl"];
     [task setArguments:[NSArray arrayWithObjects:@"list", job, nil]];
@@ -22,6 +29,7 @@
     } else {
         return false;
     }
+    */
 }
 
 - (BOOL)start:(NSString *)job

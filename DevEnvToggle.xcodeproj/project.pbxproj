@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8637DF9516EDF6DD00107C4C /* xcode-draw-16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 8637DF9416EDF6DD00107C4C /* xcode-draw-16x16.png */; };
-		86490EFF16F67FFF007B7E51 /* xcode-draw-256x256.icns in Resources */ = {isa = PBXBuildFile; fileRef = 86490EFE16F67FFF007B7E51 /* xcode-draw-256x256.icns */; };
+		861D0FED16F7526A00A7E9A3 /* Machine-White.icns in Resources */ = {isa = PBXBuildFile; fileRef = 861D0FEB16F7526A00A7E9A3 /* Machine-White.icns */; };
+		861D0FEE16F7526A00A7E9A3 /* Machine-Black.icns in Resources */ = {isa = PBXBuildFile; fileRef = 861D0FEC16F7526A00A7E9A3 /* Machine-Black.icns */; };
+		861D0FEF16F7542000A7E9A3 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882FB16F53FF8007F1270 /* ServiceManagement.framework */; };
 		8660B7E316ECCE3C00DA035F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8660B7E216ECCE3C00DA035F /* Cocoa.framework */; };
 		8660B7ED16ECCE3C00DA035F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8660B7EB16ECCE3C00DA035F /* InfoPlist.strings */; };
 		8660B7EF16ECCE3C00DA035F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8660B7EE16ECCE3C00DA035F /* main.m */; };
@@ -49,8 +50,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8637DF9416EDF6DD00107C4C /* xcode-draw-16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xcode-draw-16x16.png"; sourceTree = "<group>"; };
-		86490EFE16F67FFF007B7E51 /* xcode-draw-256x256.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "xcode-draw-256x256.icns"; sourceTree = "<group>"; };
+		861D0FEB16F7526A00A7E9A3 /* Machine-White.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Machine-White.icns"; sourceTree = "<group>"; };
+		861D0FEC16F7526A00A7E9A3 /* Machine-Black.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Machine-Black.icns"; sourceTree = "<group>"; };
 		8660B7DF16ECCE3C00DA035F /* DevEnvToggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevEnvToggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8660B7E216ECCE3C00DA035F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8660B7E516ECCE3C00DA035F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -95,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				868882EC16F53913007F1270 /* Foundation.framework in Frameworks */,
+				861D0FEF16F7542000A7E9A3 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +106,8 @@
 		8660B7D616ECCE3C00DA035F = {
 			isa = PBXGroup;
 			children = (
-				86490EFE16F67FFF007B7E51 /* xcode-draw-256x256.icns */,
+				861D0FEB16F7526A00A7E9A3 /* Machine-White.icns */,
+				861D0FEC16F7526A00A7E9A3 /* Machine-Black.icns */,
 				8660B7E816ECCE3C00DA035F /* DevEnvToggle */,
 				868882ED16F53913007F1270 /* DevEnvHelper */,
 				8660B7E116ECCE3C00DA035F /* Frameworks */,
@@ -151,7 +154,6 @@
 				86C98B9816F6073400775447 /* AppServiceData.h */,
 				86C98B9916F6073400775447 /* AppServiceData.m */,
 				8660B7F716ECCE3C00DA035F /* MainMenu.xib */,
-				8637DF9416EDF6DD00107C4C /* xcode-draw-16x16.png */,
 				8660B7E916ECCE3C00DA035F /* Supporting Files */,
 			);
 			path = DevEnvToggle;
@@ -264,9 +266,9 @@
 				8660B7ED16ECCE3C00DA035F /* InfoPlist.strings in Resources */,
 				8660B7F316ECCE3C00DA035F /* Credits.rtf in Resources */,
 				8660B7F916ECCE3C00DA035F /* MainMenu.xib in Resources */,
-				8637DF9516EDF6DD00107C4C /* xcode-draw-16x16.png in Resources */,
 				8688830316F553E3007F1270 /* DevEnvToggle-Services.plist in Resources */,
-				86490EFF16F67FFF007B7E51 /* xcode-draw-256x256.icns in Resources */,
+				861D0FED16F7526A00A7E9A3 /* Machine-White.icns in Resources */,
+				861D0FEE16F7526A00A7E9A3 /* Machine-Black.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

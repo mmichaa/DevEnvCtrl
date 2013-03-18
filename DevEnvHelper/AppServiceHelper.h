@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ServiceManagement/ServiceManagement.h>
 
 @interface AppServiceHelper : NSObject
 

@@ -23,10 +23,24 @@
 */
 
 - (void)awakeFromNib{
-    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
     NSBundle *bundle = [NSBundle mainBundle];
-    statusImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"xcode-draw-16x16" ofType:@"png"]];
-    statusLightImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"xcode-draw-16x16" ofType:@"png"]];
+    NSArray *icons = [[[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"Machine-Black" ofType:@"icns"]] representations];
+    for (NSImageRep *iconRepresentation in icons) {
+        if (iconRepresentation.size.width == 16) {
+            statusImage = [[NSImage alloc] init];
+            [statusImage addRepresentation:iconRepresentation];
+            break;
+        }
+    }
+    NSArray *lightIcons = [[[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"Machine-White" ofType:@"icns"]] representations];
+    for (NSImageRep *iconRepresentation in lightIcons) {
+        if (iconRepresentation.size.width == 16) {
+            statusLightImage = [[NSImage alloc] init];
+            [statusLightImage addRepresentation:iconRepresentation];
+            break;
+        }
+    }
     [statusItem setImage:statusImage];
     [statusItem setAlternateImage:statusLightImage];
     [statusItem setMenu:statusMenu];
@@ -35,7 +49,7 @@
     [statusItem setHighlightMode:YES];;
     // read services-plist and add menu-items
     NSArray *servicesPlist = [NSArray arrayWithContentsOfFile:[bundle pathForResource:@"DevEnvToggle-Services" ofType:@"plist"]];
-    services = [NSMutableArray array];//arrayWithCapacity:[servicesPlist count]];
+    services = [NSMutableArray arrayWithCapacity:[servicesPlist count]];
     int serviceIdx = 2;
     for (NSDictionary *serviceDict in servicesPlist) {
         AppServiceData *service = [[AppServiceData alloc] initFromDictionary:serviceDict];
