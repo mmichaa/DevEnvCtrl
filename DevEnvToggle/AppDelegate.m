@@ -24,7 +24,7 @@
 
 - (void)awakeFromNib{
     NSBundle *bundle = [NSBundle mainBundle];
-    NSArray *icons = [[[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"Machine-Black" ofType:@"icns"]] representations];
+    NSArray *icons = [[[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"DevEnvIcon-Black" ofType:@"icns"]] representations];
     for (NSImageRep *iconRepresentation in icons) {
         if (iconRepresentation.size.width == 16) {
             statusImage = [[NSImage alloc] init];
@@ -32,7 +32,7 @@
             break;
         }
     }
-    NSArray *lightIcons = [[[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"Machine-White" ofType:@"icns"]] representations];
+    NSArray *lightIcons = [[[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"DevEnvIcon-White" ofType:@"icns"]] representations];
     for (NSImageRep *iconRepresentation in lightIcons) {
         if (iconRepresentation.size.width == 16) {
             statusLightImage = [[NSImage alloc] init];

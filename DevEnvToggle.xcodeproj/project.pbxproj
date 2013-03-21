@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		861D0FED16F7526A00A7E9A3 /* Machine-White.icns in Resources */ = {isa = PBXBuildFile; fileRef = 861D0FEB16F7526A00A7E9A3 /* Machine-White.icns */; };
-		861D0FEE16F7526A00A7E9A3 /* Machine-Black.icns in Resources */ = {isa = PBXBuildFile; fileRef = 861D0FEC16F7526A00A7E9A3 /* Machine-Black.icns */; };
+		8601087316FBB6AF004C4D4C /* DevEnvIcon-Black.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8601087116FBB6AF004C4D4C /* DevEnvIcon-Black.icns */; };
+		8601087416FBB6AF004C4D4C /* DevEnvIcon-White.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8601087216FBB6AF004C4D4C /* DevEnvIcon-White.icns */; };
 		861D0FEF16F7542000A7E9A3 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882FB16F53FF8007F1270 /* ServiceManagement.framework */; };
 		8660B7E316ECCE3C00DA035F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8660B7E216ECCE3C00DA035F /* Cocoa.framework */; };
 		8660B7ED16ECCE3C00DA035F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8660B7EB16ECCE3C00DA035F /* InfoPlist.strings */; };
@@ -50,8 +50,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		861D0FEB16F7526A00A7E9A3 /* Machine-White.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Machine-White.icns"; sourceTree = "<group>"; };
-		861D0FEC16F7526A00A7E9A3 /* Machine-Black.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "Machine-Black.icns"; sourceTree = "<group>"; };
+		8601087116FBB6AF004C4D4C /* DevEnvIcon-Black.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "DevEnvIcon-Black.icns"; sourceTree = "<group>"; };
+		8601087216FBB6AF004C4D4C /* DevEnvIcon-White.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "DevEnvIcon-White.icns"; sourceTree = "<group>"; };
 		8660B7DF16ECCE3C00DA035F /* DevEnvToggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevEnvToggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8660B7E216ECCE3C00DA035F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8660B7E516ECCE3C00DA035F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -106,8 +106,8 @@
 		8660B7D616ECCE3C00DA035F = {
 			isa = PBXGroup;
 			children = (
-				861D0FEB16F7526A00A7E9A3 /* Machine-White.icns */,
-				861D0FEC16F7526A00A7E9A3 /* Machine-Black.icns */,
+				8601087116FBB6AF004C4D4C /* DevEnvIcon-Black.icns */,
+				8601087216FBB6AF004C4D4C /* DevEnvIcon-White.icns */,
 				8660B7E816ECCE3C00DA035F /* DevEnvToggle */,
 				868882ED16F53913007F1270 /* DevEnvHelper */,
 				8660B7E116ECCE3C00DA035F /* Frameworks */,
@@ -267,8 +267,8 @@
 				8660B7F316ECCE3C00DA035F /* Credits.rtf in Resources */,
 				8660B7F916ECCE3C00DA035F /* MainMenu.xib in Resources */,
 				8688830316F553E3007F1270 /* DevEnvToggle-Services.plist in Resources */,
-				861D0FED16F7526A00A7E9A3 /* Machine-White.icns in Resources */,
-				861D0FEE16F7526A00A7E9A3 /* Machine-Black.icns in Resources */,
+				8601087316FBB6AF004C4D4C /* DevEnvIcon-Black.icns in Resources */,
+				8601087416FBB6AF004C4D4C /* DevEnvIcon-White.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

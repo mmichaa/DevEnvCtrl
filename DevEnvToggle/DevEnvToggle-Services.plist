@@ -19,8 +19,6 @@
 		<string>/Library/LaunchDaemons</string>
 		<key>diskimage</key>
 		<dict>
-			<key>label</key>
-			<string>MySQL-Encrypted-Data</string>
 			<key>path</key>
 			<string>/Users/micha/Library/Application Support/MySQL/EncDataImage.sparsebundle</string>
 			<key>options</key>
@@ -40,6 +38,19 @@
 		<string>com.edb.launchd.postgresql-9.2</string>
 		<key>path</key>
 		<string>/Library/LaunchDaemons</string>
+		<key>diskimage</key>
+		<dict>
+			<key>path</key>
+			<string>/Users/micha/Library/Application Support/PostgreSQL/EncDataImage.sparsebundle</string>
+			<key>options</key>
+			<array>
+				<string>-encryption</string>
+				<string>AES-128</string>
+				<string>-owners</string>
+				<string>on</string>
+				<string>-stdinpass</string>
+			</array>
+		</dict>
 	</dict>
 </array>
 </plist>

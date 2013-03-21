@@ -16,3 +16,8 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+
+# Xmy
+*-1024x1024px.png
+*.iconset
+DevEnvToggle-v*
