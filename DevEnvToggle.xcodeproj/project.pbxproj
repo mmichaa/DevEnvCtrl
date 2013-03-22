@@ -16,12 +16,14 @@
 		8660B7F316ECCE3C00DA035F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8660B7F116ECCE3C00DA035F /* Credits.rtf */; };
 		8660B7F616ECCE3C00DA035F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8660B7F516ECCE3C00DA035F /* AppDelegate.m */; };
 		8660B7F916ECCE3C00DA035F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8660B7F716ECCE3C00DA035F /* MainMenu.xib */; };
+		8673E4CE16FC78C000DC67A3 /* org.apache.service.httpd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8673E4CD16FC78C000DC67A3 /* org.apache.service.httpd.plist */; };
+		8673E4D016FC796200DC67A3 /* com.mysql.service.mysqld.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8673E4CF16FC796200DC67A3 /* com.mysql.service.mysqld.plist */; };
+		8673E4D216FC799300DC67A3 /* com.edb.service.postgresql.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8673E4D116FC799300DC67A3 /* com.edb.service.postgresql.plist */; };
 		868882EC16F53913007F1270 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882EB16F53913007F1270 /* Foundation.framework */; };
 		868882EF16F53913007F1270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 868882EE16F53913007F1270 /* main.m */; };
 		868882FA16F53FE6007F1270 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882F916F53FE6007F1270 /* Security.framework */; };
 		868882FC16F53FF8007F1270 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882FB16F53FF8007F1270 /* ServiceManagement.framework */; };
 		8688830016F54538007F1270 /* com.taktsoft.DevEnvHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 868882EA16F53913007F1270 /* com.taktsoft.DevEnvHelper */; };
-		8688830316F553E3007F1270 /* DevEnvToggle-Services.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8688830216F553E3007F1270 /* DevEnvToggle-Services.plist */; };
 		86C98B9A16F6073400775447 /* AppServiceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C98B9916F6073400775447 /* AppServiceData.m */; };
 		86C98B9D16F61A7C00775447 /* AppServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C98B9C16F61A7C00775447 /* AppServiceHelper.m */; };
 /* End PBXBuildFile section */
@@ -65,6 +67,9 @@
 		8660B7F416ECCE3C00DA035F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8660B7F516ECCE3C00DA035F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8660B7F816ECCE3C00DA035F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		8673E4CD16FC78C000DC67A3 /* org.apache.service.httpd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = org.apache.service.httpd.plist; sourceTree = "<group>"; };
+		8673E4CF16FC796200DC67A3 /* com.mysql.service.mysqld.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = com.mysql.service.mysqld.plist; sourceTree = "<group>"; };
+		8673E4D116FC799300DC67A3 /* com.edb.service.postgresql.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = com.edb.service.postgresql.plist; sourceTree = "<group>"; };
 		868882EA16F53913007F1270 /* com.taktsoft.DevEnvHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = com.taktsoft.DevEnvHelper; sourceTree = BUILT_PRODUCTS_DIR; };
 		868882EB16F53913007F1270 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		868882EE16F53913007F1270 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -73,7 +78,6 @@
 		868882F816F539A4007F1270 /* DevEnvHelper-Launchd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DevEnvHelper-Launchd.plist"; sourceTree = "<group>"; };
 		868882F916F53FE6007F1270 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		868882FB16F53FF8007F1270 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
-		8688830216F553E3007F1270 /* DevEnvToggle-Services.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DevEnvToggle-Services.plist"; sourceTree = "<group>"; };
 		86C98B9816F6073400775447 /* AppServiceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServiceData.h; sourceTree = "<group>"; };
 		86C98B9916F6073400775447 /* AppServiceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServiceData.m; sourceTree = "<group>"; };
 		86C98B9B16F61A7C00775447 /* AppServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServiceHelper.h; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 				86C98B9816F6073400775447 /* AppServiceData.h */,
 				86C98B9916F6073400775447 /* AppServiceData.m */,
 				8660B7F716ECCE3C00DA035F /* MainMenu.xib */,
+				8673E4CC16FC78A200DC67A3 /* Service Files */,
 				8660B7E916ECCE3C00DA035F /* Supporting Files */,
 			);
 			path = DevEnvToggle;
@@ -163,13 +168,22 @@
 			isa = PBXGroup;
 			children = (
 				8660B7EA16ECCE3C00DA035F /* DevEnvToggle-Info.plist */,
-				8688830216F553E3007F1270 /* DevEnvToggle-Services.plist */,
 				8660B7EB16ECCE3C00DA035F /* InfoPlist.strings */,
 				8660B7EE16ECCE3C00DA035F /* main.m */,
 				8660B7F016ECCE3C00DA035F /* DevEnvToggle-Prefix.pch */,
 				8660B7F116ECCE3C00DA035F /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8673E4CC16FC78A200DC67A3 /* Service Files */ = {
+			isa = PBXGroup;
+			children = (
+				8673E4CD16FC78C000DC67A3 /* org.apache.service.httpd.plist */,
+				8673E4CF16FC796200DC67A3 /* com.mysql.service.mysqld.plist */,
+				8673E4D116FC799300DC67A3 /* com.edb.service.postgresql.plist */,
+			);
+			name = "Service Files";
 			sourceTree = "<group>";
 		};
 		868882ED16F53913007F1270 /* DevEnvHelper */ = {
@@ -266,9 +280,11 @@
 				8660B7ED16ECCE3C00DA035F /* InfoPlist.strings in Resources */,
 				8660B7F316ECCE3C00DA035F /* Credits.rtf in Resources */,
 				8660B7F916ECCE3C00DA035F /* MainMenu.xib in Resources */,
-				8688830316F553E3007F1270 /* DevEnvToggle-Services.plist in Resources */,
 				8601087316FBB6AF004C4D4C /* DevEnvIcon-Black.icns in Resources */,
 				8601087416FBB6AF004C4D4C /* DevEnvIcon-White.icns in Resources */,
+				8673E4CE16FC78C000DC67A3 /* org.apache.service.httpd.plist in Resources */,
+				8673E4D016FC796200DC67A3 /* com.mysql.service.mysqld.plist in Resources */,
+				8673E4D216FC799300DC67A3 /* com.edb.service.postgresql.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

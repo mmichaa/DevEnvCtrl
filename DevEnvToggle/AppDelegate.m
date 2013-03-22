@@ -47,23 +47,29 @@
     [statusItem setAction:@selector(onClick:)];
     [statusItem setToolTip:@"DevEnvToggle"];
     [statusItem setHighlightMode:YES];;
-    // read services-plist and add menu-items
-    NSArray *servicesPlist = [NSArray arrayWithContentsOfFile:[bundle pathForResource:@"DevEnvToggle-Services" ofType:@"plist"]];
-    services = [NSMutableArray arrayWithCapacity:[servicesPlist count]];
+    // read service-plists and add menu-items
+    NSArray *servicePaths = [self serviceFiles];
+    services = [NSMutableArray arrayWithCapacity:[servicePaths count]];
     int serviceIdx = 2;
-    for (NSDictionary *serviceDict in servicesPlist) {
+    for (NSString *servicePath in servicePaths) {
+        NSDictionary *serviceDict = [NSDictionary dictionaryWithContentsOfFile:servicePath];
         AppServiceData *service = [[AppServiceData alloc] initFromDictionary:serviceDict];
         NSMenuItem *serviceItem = [[NSMenuItem alloc] init];
         [serviceItem setTitle:[service label]];
         [serviceItem setAction:@selector(onToggleItem:)];
         [serviceItem setKeyEquivalent:[[service label] substringToIndex:1]];
         [serviceItem setState:NSMixedState];
-        [serviceItem setEnabled:YES];
+        if ([service plistPathExsists]) {
+            [serviceItem setEnabled:YES];
+        } else {
+            [serviceItem setEnabled:NO];
+        }
         [serviceItem setHidden:NO];
         [statusMenu insertItem:serviceItem atIndex:serviceIdx];
         [services addObject:service];
         serviceIdx++;
     }
+    [self serviceFiles];
 }
 
 - (void)menuWillOpen:(NSMenu *)menu
@@ -174,6 +180,37 @@
     *error = (__bridge NSError *)err;
     
     return result;
+}
+
+- (NSString *)applicationSupportDirectory
+{
+    NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    NSString *supportPath = [searchPaths objectAtIndex:0];
+    NSString *executableName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleExecutable"];
+    NSString *applicationSupportPath = [supportPath stringByAppendingPathComponent:executableName];
+    NSError *error;
+    BOOL result = [[NSFileManager defaultManager] createDirectoryAtPath:applicationSupportPath withIntermediateDirectories:YES attributes:nil error:&error];
+    if (result) {
+        //NSLog(@"applicationSupportDirectory: %@", applicationSupportPath);
+        return applicationSupportPath;
+    } else {
+        //NSLog(@"applicationSupportDirectory: %@", [error localizedDescription]);
+        return nil;
+    }
+}
+
+- (NSArray *)serviceFiles
+{
+    NSError *error;
+    NSString *directory = [self applicationSupportDirectory];
+    NSArray *serviceFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directory error:&error];
+    NSMutableArray *servicePaths = [NSMutableArray arrayWithCapacity:[serviceFiles count]];
+    for (NSString *serviceFile in serviceFiles) {
+        if ([[serviceFile pathExtension] isEqual: @"plist"]) {
+            [servicePaths addObject:[directory stringByAppendingPathComponent:serviceFile]];
+        }
+    }
+    return servicePaths;
 }
 
 @end

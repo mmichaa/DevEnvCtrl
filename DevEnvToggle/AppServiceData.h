@@ -21,6 +21,7 @@
 - (NSURL *)pathAsURL;
 - (NSString *)plistPath;
 - (NSURL *)plistPathAsURL;
+- (BOOL)plistPathExsists;
 
 -(NSDictionary *)diskimage;
 -(NSString *)diskimageLabel;

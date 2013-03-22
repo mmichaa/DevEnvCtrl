@@ -50,6 +50,11 @@
     return [NSURL fileURLWithPath:[self plistPath] isDirectory:false];
 }
 
+- (BOOL)plistPathExsists
+{
+    return [[NSFileManager defaultManager] fileExistsAtPath:[self plistPath]];
+}
+
 -(NSDictionary *)diskimage
 {
     return [data valueForKey:@"diskimage"];
