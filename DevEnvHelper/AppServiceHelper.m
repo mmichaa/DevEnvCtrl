@@ -18,18 +18,6 @@
     } else {
         return false;
     }
-    /* old version of the check
-    NSTask *task = [NSTask new];
-    [task setLaunchPath:@"/bin/launchctl"];
-    [task setArguments:[NSArray arrayWithObjects:@"list", job, nil]];
-    [task launch];
-    [task waitUntilExit];
-    if ([task terminationStatus] == 0) {
-        return true;
-    } else {
-        return false;
-    }
-    */
 }
 
 - (BOOL)start:(NSString *)job

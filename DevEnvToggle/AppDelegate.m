@@ -82,9 +82,13 @@
     }
 }
 
-
 - (IBAction)onToggle:(id)sender {
     NSLog(@"onToggle");
+    for (AppServiceData *service in services) {
+        NSString *label = [service label];
+        NSMenuItem *serviceItem = [statusMenu itemWithTitle:label];
+        [self onToggleItem:serviceItem];
+    }
 }
 
 - (IBAction)onToggleItem:(id)sender {
@@ -102,7 +106,7 @@
                     if (![service diskimageDetach]) {
                         NSLog(@"Error detaching DiskImage!");
                         break;
-                    };
+                    }
                 }
             } else {
                 if ([service diskimage]) {
@@ -110,7 +114,7 @@
                     if (![service diskimageAttach]) {
                         NSLog(@"Error attaching DiskImage!");
                         break;
-                    };
+                    }
                 }
                 NSLog(@"Starting ToggleItem '%@' ...", job);
                 [serviceHelperProxy start:plistPath];

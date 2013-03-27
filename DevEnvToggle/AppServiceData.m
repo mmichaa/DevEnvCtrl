@@ -11,11 +11,13 @@
 @implementation AppServiceData
 
 @synthesize data;
+@synthesize cache;
 
 - (id)initFromDictionary:(NSDictionary *)dictionary
 {
     self = [super init];
     [self setData:dictionary];
+    [self setCache:[NSMutableDictionary dictionary]];
     return self;
 }
 
@@ -41,8 +43,13 @@
 
 - (NSString *)plistPath
 {
-    NSArray *pathComponents = [NSArray arrayWithObjects:[self path], @"/", [self job], @".plist", nil];
-    return [pathComponents componentsJoinedByString:@""];
+    NSString *path = [cache valueForKey:@"plistPath"];
+    if (path == nil) {
+        NSArray *pathComponents = [NSArray arrayWithObjects:[self path], @"/", [self job], @".plist", nil];
+        path = [pathComponents componentsJoinedByString:@""];
+        [cache setValue:path forKey:@"plistPath"];
+    }
+    return path;
 }
 
 - (NSURL *)plistPathAsURL
@@ -60,21 +67,19 @@
     return [data valueForKey:@"diskimage"];
 }
 
--(NSString *)diskimageLabel
-{
-    NSDictionary *diskimage = [self diskimage];
-    if (diskimage) {
-        return [diskimage valueForKey:@"label"];
-    } else {
-        return nil;
-    }
-}
-
 -(NSString *)diskimagePath
 {
     NSDictionary *diskimage = [self diskimage];
     if (diskimage) {
-        return [diskimage valueForKey:@"path"];
+        NSString *path = [cache valueForKey:@"diskimagePath"];
+        if (path == nil) {
+            path = [diskimage valueForKey:@"path"];
+            if ([[path substringToIndex:1] isEqual:@"~"]) {
+                path = [path stringByExpandingTildeInPath];
+            }
+            [cache setValue:path forKey:@"diskimagePath"];
+        }
+        return path;
     } else {
         return nil;
     }
@@ -84,7 +89,12 @@
 {
     NSString *path = [self diskimagePath];
     if (path) {
-        return [[NSURL fileURLWithPath:[self diskimagePath] isDirectory:false] lastPathComponent];
+        NSString *basename = [cache valueForKey:@"diskimageBasename"];
+        if (basename == nil) {
+            basename = [[NSURL fileURLWithPath:[self diskimagePath] isDirectory:false] lastPathComponent];
+            [cache setValue:basename forKey:@"diskimageBasename"];
+        }
+        return basename;
     } else {
         return nil;
     }
@@ -95,6 +105,37 @@
     NSDictionary *diskimage = [self diskimage];
     if (diskimage) {
         return [diskimage valueForKey:@"options"];
+    } else {
+        return nil;
+    }
+}
+
+-(NSString *)diskimageUUID
+{
+    NSDictionary *diskimage = [self diskimage];
+    if (diskimage) {
+        NSString *uuid = [cache valueForKey:@"diskimageUUID"];
+        if (uuid == nil) {
+            NSArray *args = [NSArray arrayWithObjects:@"isencrypted", @"-plist", [self diskimagePath], nil];
+            NSTask *task = [NSTask new];
+            NSPipe *pipeOut =[NSPipe pipe];
+            [task setLaunchPath:@"/usr/bin/hdiutil"];
+            [task setArguments:args];
+            [task setStandardOutput:pipeOut];
+            [task launch];
+            NSFileHandle *output = [pipeOut fileHandleForReading];
+            [task waitUntilExit];
+            if ([task terminationStatus] == 0) {
+                NSData *outData = [output readDataToEndOfFile];
+                NSString *error;
+                NSPropertyListFormat format;
+                NSDictionary *outDict = [NSPropertyListSerialization propertyListFromData:outData mutabilityOption:NSPropertyListImmutable format:&format errorDescription:&error];
+                uuid = [outDict valueForKey:@"uuid"];
+            } else {
+                return nil;
+            }
+        }
+        return uuid;
     } else {
         return nil;
     }
@@ -120,9 +161,10 @@
     SecKeychainCopyDefault(keychain);
     NSString *pass = nil;
     NSString *serviceName = [self diskimageBasename];
+    NSString *accountName = [self diskimageUUID];
     UInt32 passLen = 0;
     void *passData = nil;
-    OSStatus error = SecKeychainFindGenericPassword(keychain, (UInt32)[serviceName length], [serviceName cStringUsingEncoding:NSUTF8StringEncoding], NULL, NULL, &passLen, &passData, NULL);
+    OSStatus error = SecKeychainFindGenericPassword(keychain, (UInt32)[serviceName length], [serviceName cStringUsingEncoding:NSUTF8StringEncoding], (UInt32)[accountName length], [accountName cStringUsingEncoding:NSUTF8StringEncoding], &passLen, &passData, NULL);
     if (error == noErr) {
         pass = [[NSString alloc] initWithBytes:passData length:passLen encoding:NSUTF8StringEncoding];
         SecKeychainItemFreeContent(NULL, passData);
@@ -166,7 +208,7 @@
         NSData *outData = [output readDataOfLength:32];
         NSString *outString = [[NSString alloc] initWithData:outData encoding:NSASCIIStringEncoding];
         NSString *disk = [[outString componentsSeparatedByString:@" "] objectAtIndex:0];
-        [[self diskimage] setValue:disk forKey:@"disk"];
+        [cache setValue:disk forKey:@"disk"];
         return true;
     } else {
         return false;
@@ -176,8 +218,7 @@
 -(BOOL)diskimageDetach
 {
     NSTask *task = [NSTask new];
-    NSMutableArray *args = [NSMutableArray arrayWithObjects:@"detach", nil];
-    [args addObject:[[self diskimage] valueForKey:@"disk"]];
+    NSArray *args = [NSArray arrayWithObjects:@"detach", [cache valueForKey:@"disk"], nil];
     [task setLaunchPath:@"/usr/bin/hdiutil"];
     [task setArguments:args];
     [task setStandardOutput:[NSFileHandle fileHandleWithNullDevice]];

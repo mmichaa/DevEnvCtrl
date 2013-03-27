@@ -12,6 +12,7 @@
 @interface AppServiceData : NSObject
 
 @property NSDictionary *data;
+@property NSMutableDictionary *cache;
 
 - (id)initFromDictionary:(NSDictionary *)dictionary;
 
@@ -24,10 +25,10 @@
 - (BOOL)plistPathExsists;
 
 -(NSDictionary *)diskimage;
--(NSString *)diskimageLabel;
 -(NSString *)diskimagePath;
 -(NSString *)diskimageBasename;
 -(NSArray *)diskimageAttachOptions;
+-(NSString *)diskimageUUID;
 -(BOOL)diskimageAttachOptionsWithEncryption;
 -(BOOL)diskimageAttach;
 -(BOOL)diskimageDetach;
