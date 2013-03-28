@@ -52,9 +52,8 @@
     services = [NSMutableArray arrayWithCapacity:[servicePaths count]];
     int serviceIdx = 2;
     for (NSString *servicePath in servicePaths) {
-        NSDictionary *serviceDict = [NSDictionary dictionaryWithContentsOfFile:servicePath];
-        AppServiceData *service = [[AppServiceData alloc] initFromDictionary:serviceDict];
-        NSMenuItem *serviceItem = [[NSMenuItem alloc] init];
+        AppServiceData *service = [AppServiceData serviceDataWithContentsOfFile:servicePath];
+        NSMenuItem *serviceItem = [NSMenuItem new];
         [serviceItem setTitle:[service label]];
         [serviceItem setAction:@selector(onToggleItem:)];
         [serviceItem setKeyEquivalent:[[service label] substringToIndex:1]];
@@ -83,7 +82,6 @@
 }
 
 - (IBAction)onToggle:(id)sender {
-    NSLog(@"onToggle");
     for (AppServiceData *service in services) {
         NSString *label = [service label];
         NSMenuItem *serviceItem = [statusMenu itemWithTitle:label];
@@ -92,7 +90,6 @@
 }
 
 - (IBAction)onToggleItem:(id)sender {
-    NSLog(@"onToggleItem");
     NSMenuItem *serviceItem = sender;
     for (AppServiceData *service in services) {
         if ([service label] == [serviceItem title]) {
@@ -101,7 +98,6 @@
             if([serviceHelperProxy status:job]) {
                 NSLog(@"Stoping ToggleItem '%@' ...", job);
                 [serviceHelperProxy stop:plistPath];
-                //[serviceItem setState:NSOffState];
                 if ([service diskimage]) {
                     if (![service diskimageDetach]) {
                         NSLog(@"Error detaching DiskImage!");
@@ -118,7 +114,6 @@
                 }
                 NSLog(@"Starting ToggleItem '%@' ...", job);
                 [serviceHelperProxy start:plistPath];
-                //[serviceItem setState:NSOnState];
             }
             break;
         }
@@ -128,25 +123,18 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Check Helper
-    NSDictionary *plist = (__bridge NSDictionary*)SMJobCopyDictionary(kSMDomainSystemLaunchd, (__bridge CFStringRef)@"com.taktsoft.DevEnvHelper");
+    NSDictionary *plist = [AppServiceChecker serviceHelperJobDictionary];
     if (!plist) {
-        // Get authorization
-        AuthorizationRef authRef = [self createAuthRef];
-        if (authRef == NULL) {
-            NSLog(@"Authorization failed");
-            return;
-        }
-        
-        // Bless (Install) Helper
-        NSError *error = nil;
-        if (![self blessHelperWithLabel:@"com.taktsoft.DevEnvHelper" withAuthRef:authRef error:&error]) {
-            NSLog(@"Failed to bless helper");
-            return;
+        [self installHelperWithLabel:serviceHelperLabel];
+    } else {
+        BOOL codeValidity = true; // [AppServiceChecker checkCodeValidity];
+        BOOL versionValidity = true; // [AppServiceChecker checkVersionValidity];
+        if (!codeValidity || !versionValidity) {
+            [self installHelperWithLabel:serviceHelperLabel];
         }
     }
     // Connect to Helper
-    NSLog(@"Connecting to Helper");
-    NSConnection *c = [NSConnection connectionWithRegisteredName:@"com.taktsoft.DevEnvHelper.mach" host:nil];
+    NSConnection *c = [NSConnection connectionWithRegisteredName:serviceHelperMachLabel host:nil];
     serviceHelperProxy = (AppServiceHelper *)[c rootProxy];
 }
 
@@ -165,21 +153,42 @@
     return authRef;
 }
 
+-(BOOL)installHelperWithLabel:(NSString *)label
+{
+    // Get Authorization
+    AuthorizationRef authRef = [self createAuthRef];
+    if (authRef == NULL) {
+        NSLog(@"Authorization failed");
+        return false;
+    }
+    
+    // Bless (Install) Helper
+    NSError *error = nil;
+    if (![self blessHelperWithLabel:label withAuthRef:authRef error:&error]) {
+        NSLog(@"Failed to bless helper");
+        return false;
+    } else {
+        return true;
+    }
+}
+
 - (BOOL)blessHelperWithLabel:(NSString *)label withAuthRef:(AuthorizationRef)authRef error:(NSError **)error
 {
     CFErrorRef err = NULL;
     BOOL result;
+    /*
     result = SMJobRemove(kSMDomainSystemLaunchd, (__bridge CFStringRef)label, authRef, true, &err);
     if (result) {
-        NSLog(@"Job removed!");
+        NSLog(@"Job '%@' removed!", label);
     } else {
-        NSLog(@"Job not removed!");
+        NSLog(@"Job '%@' not removed!", label);
     }
+     */
     result = SMJobBless(kSMDomainSystemLaunchd, (__bridge CFStringRef)label, authRef, &err);
     if (result) {
-        NSLog(@"Job blessed!");
+        NSLog(@"Job '%@' blessed!", label);
     } else {
-        NSLog(@"Job not blessed!");
+        NSLog(@"Job '%@' not blessed!", label);
     }
     *error = (__bridge NSError *)err;
     

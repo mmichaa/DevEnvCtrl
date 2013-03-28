@@ -14,7 +14,11 @@
 @property NSDictionary *data;
 @property NSMutableDictionary *cache;
 
-- (id)initFromDictionary:(NSDictionary *)dictionary;
++ (id)serviceDataWithDictionary:(NSDictionary *)dictionary;
++ (id)serviceDataWithContentsOfFile:(NSString *)path;
+
+- (id)initWithDictionary:(NSDictionary *)dictionary;
+- (id)initWithContentsOfFile:(NSString *)path;
 
 - (NSString *)label;
 - (NSString *)job;

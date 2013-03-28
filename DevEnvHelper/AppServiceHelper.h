@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <ServiceManagement/ServiceManagement.h>
 
+static NSString *serviceHelperLabel = @"com.taktsoft.DevEnvHelper";
+static NSString *serviceHelperMachLabel = @"com.taktsoft.DevEnvHelper.mach";
+
 @interface AppServiceHelper : NSObject
 
 - (BOOL)status:(NSString *)job;

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8601087316FBB6AF004C4D4C /* DevEnvIcon-Black.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8601087116FBB6AF004C4D4C /* DevEnvIcon-Black.icns */; };
 		8601087416FBB6AF004C4D4C /* DevEnvIcon-White.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8601087216FBB6AF004C4D4C /* DevEnvIcon-White.icns */; };
+		860EA2761703D67100C42A29 /* AppServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C98B9C16F61A7C00775447 /* AppServiceHelper.m */; };
+		860EA2791703D8D000C42A29 /* AppServiceChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 860EA2781703D8D000C42A29 /* AppServiceChecker.m */; };
 		861D0FEF16F7542000A7E9A3 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882FB16F53FF8007F1270 /* ServiceManagement.framework */; };
 		8660B7E316ECCE3C00DA035F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8660B7E216ECCE3C00DA035F /* Cocoa.framework */; };
 		8660B7ED16ECCE3C00DA035F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8660B7EB16ECCE3C00DA035F /* InfoPlist.strings */; };
@@ -25,11 +27,10 @@
 		868882FC16F53FF8007F1270 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882FB16F53FF8007F1270 /* ServiceManagement.framework */; };
 		8688830016F54538007F1270 /* com.taktsoft.DevEnvHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 868882EA16F53913007F1270 /* com.taktsoft.DevEnvHelper */; };
 		86C98B9A16F6073400775447 /* AppServiceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C98B9916F6073400775447 /* AppServiceData.m */; };
-		86C98B9D16F61A7C00775447 /* AppServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C98B9C16F61A7C00775447 /* AppServiceHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		868882FD16F54492007F1270 /* PBXContainerItemProxy */ = {
+		860EA2741703D65D00C42A29 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8660B7D716ECCE3C00DA035F /* Project object */;
 			proxyType = 1;
@@ -54,6 +55,8 @@
 /* Begin PBXFileReference section */
 		8601087116FBB6AF004C4D4C /* DevEnvIcon-Black.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "DevEnvIcon-Black.icns"; sourceTree = "<group>"; };
 		8601087216FBB6AF004C4D4C /* DevEnvIcon-White.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "DevEnvIcon-White.icns"; sourceTree = "<group>"; };
+		860EA2771703D8D000C42A29 /* AppServiceChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServiceChecker.h; sourceTree = "<group>"; };
+		860EA2781703D8D000C42A29 /* AppServiceChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServiceChecker.m; sourceTree = "<group>"; };
 		8660B7DF16ECCE3C00DA035F /* DevEnvToggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevEnvToggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8660B7E216ECCE3C00DA035F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8660B7E516ECCE3C00DA035F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -155,6 +158,8 @@
 			children = (
 				8660B7F416ECCE3C00DA035F /* AppDelegate.h */,
 				8660B7F516ECCE3C00DA035F /* AppDelegate.m */,
+				860EA2771703D8D000C42A29 /* AppServiceChecker.h */,
+				860EA2781703D8D000C42A29 /* AppServiceChecker.m */,
 				86C98B9816F6073400775447 /* AppServiceData.h */,
 				86C98B9916F6073400775447 /* AppServiceData.m */,
 				8660B7F716ECCE3C00DA035F /* MainMenu.xib */,
@@ -222,7 +227,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				868882FE16F54492007F1270 /* PBXTargetDependency */,
+				860EA2751703D65D00C42A29 /* PBXTargetDependency */,
 			);
 			name = DevEnvToggle;
 			productName = DevEnvToggle;
@@ -298,6 +303,7 @@
 				8660B7EF16ECCE3C00DA035F /* main.m in Sources */,
 				8660B7F616ECCE3C00DA035F /* AppDelegate.m in Sources */,
 				86C98B9A16F6073400775447 /* AppServiceData.m in Sources */,
+				860EA2791703D8D000C42A29 /* AppServiceChecker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,17 +312,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				868882EF16F53913007F1270 /* main.m in Sources */,
-				86C98B9D16F61A7C00775447 /* AppServiceHelper.m in Sources */,
+				860EA2761703D67100C42A29 /* AppServiceHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		868882FE16F54492007F1270 /* PBXTargetDependency */ = {
+		860EA2751703D65D00C42A29 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 868882E916F53913007F1270 /* DevEnvHelper */;
-			targetProxy = 868882FD16F54492007F1270 /* PBXContainerItemProxy */;
+			targetProxy = 860EA2741703D65D00C42A29 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -429,10 +435,12 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DevEnvToggle/DevEnvToggle-Prefix.pch";
 				INFOPLIST_FILE = "DevEnvToggle/DevEnvToggle-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

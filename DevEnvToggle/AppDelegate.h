@@ -7,9 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <ServiceManagement/ServiceManagement.h>
 #import <Security/Authorization.h>
+#import <ServiceManagement/ServiceManagement.h>
 
+#import "AppServiceChecker.h"
 #import "AppServiceData.h"
 #import "AppServiceHelper.h"
 

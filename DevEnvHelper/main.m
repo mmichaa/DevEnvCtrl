@@ -20,7 +20,7 @@ int main(int argc, const char * argv[])
         launch_data_t req = launch_data_new_string(LAUNCH_KEY_CHECKIN);
         launch_data_t resp = launch_msg(req);
         launch_data_t machData = launch_data_dict_lookup(resp, LAUNCH_JOBKEY_MACHSERVICES);
-        launch_data_t machPortData = launch_data_dict_lookup(machData, "com.taktsoft.DevEnvHelper.mach");
+        launch_data_t machPortData = launch_data_dict_lookup(machData, [serviceHelperMachLabel cStringUsingEncoding:NSASCIIStringEncoding]);
         
         mach_port_t mp = launch_data_get_machport(machPortData);
         launch_data_free(req);

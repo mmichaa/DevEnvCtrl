@@ -13,12 +13,29 @@
 @synthesize data;
 @synthesize cache;
 
-- (id)initFromDictionary:(NSDictionary *)dictionary
++ (id)serviceDataWithDictionary:(NSDictionary *)dictionary
 {
-    self = [super init];
-    [self setData:dictionary];
-    [self setCache:[NSMutableDictionary dictionary]];
+    return [[self alloc] initWithDictionary:dictionary];
+}
+
++ (id)serviceDataWithContentsOfFile:(NSString *)path
+{
+    return [[self alloc] initWithContentsOfFile:path];
+}
+
+- (id)initWithDictionary:(NSDictionary *)dictionary
+{
+    if (self = [super init]) {
+        data = dictionary;
+        cache = [NSMutableDictionary dictionary];
+    }
     return self;
+}
+
+- (id)initWithContentsOfFile:(NSString *)path
+{
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:path];
+    return [self initWithDictionary:dictionary];
 }
 
 - (NSString *)label
@@ -157,15 +174,15 @@
 
 -(NSString *)diskimageAttachEncryptionPassword
 {
-    SecKeychainRef *keychain = nil;
-    SecKeychainCopyDefault(keychain);
     NSString *pass = nil;
     NSString *serviceName = [self diskimageBasename];
     NSString *accountName = [self diskimageUUID];
     UInt32 passLen = 0;
     void *passData = nil;
-    OSStatus error = SecKeychainFindGenericPassword(keychain, (UInt32)[serviceName length], [serviceName cStringUsingEncoding:NSUTF8StringEncoding], (UInt32)[accountName length], [accountName cStringUsingEncoding:NSUTF8StringEncoding], &passLen, &passData, NULL);
-    if (error == noErr) {
+    OSStatus error;
+    error = SecKeychainUnlock(NULL, 0, NULL, FALSE);
+    error = SecKeychainFindGenericPassword(NULL, (UInt32)[serviceName lengthOfBytesUsingEncoding:NSUTF8StringEncoding], [serviceName UTF8String], (UInt32)[accountName lengthOfBytesUsingEncoding:NSUTF8StringEncoding], [accountName UTF8String], &passLen, &passData, NULL);
+    if (error == errSecSuccess) {
         pass = [[NSString alloc] initWithBytes:passData length:passLen encoding:NSUTF8StringEncoding];
         SecKeychainItemFreeContent(NULL, passData);
     }
