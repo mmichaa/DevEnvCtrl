@@ -13,6 +13,19 @@
 @synthesize data;
 @synthesize cache;
 
++ (NSArray *)serviceDataFiles:(NSString *)directory
+{
+    NSError *error;
+    NSArray *directoryEntries = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directory error:&error];
+    NSMutableArray *serviceFiles = [NSMutableArray arrayWithCapacity:[directoryEntries count]];
+    for (NSString *serviceFile in directoryEntries) {
+        if ([[serviceFile pathExtension] isEqual: @"plist"]) {
+            [serviceFiles addObject:[directory stringByAppendingPathComponent:serviceFile]];
+        }
+    }
+    return serviceFiles;
+}
+
 + (id)serviceDataWithDictionary:(NSDictionary *)dictionary
 {
     return [[self alloc] initWithDictionary:dictionary];

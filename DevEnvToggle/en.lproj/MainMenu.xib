@@ -1298,7 +1298,6 @@
 				<array class="NSMutableArray" key="NSMenuItems">
 					<object class="NSMenuItem" id="711201541">
 						<reference key="NSMenu" ref="692572869"/>
-						<bool key="NSIsDisabled">YES</bool>
 						<string key="NSTitle">Toggle</string>
 						<string key="NSKeyEquiv">t</string>
 						<int key="NSMnemonicLoc">2147483647</int>
@@ -1334,6 +1333,7 @@
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
 				</array>
+				<bool key="NSNoAutoenable">YES</bool>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">

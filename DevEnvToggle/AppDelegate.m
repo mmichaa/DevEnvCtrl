@@ -48,15 +48,16 @@
     [statusItem setToolTip:@"DevEnvToggle"];
     [statusItem setHighlightMode:YES];;
     // read service-plists and add menu-items
-    NSArray *servicePaths = [self serviceFiles];
-    services = [NSMutableArray arrayWithCapacity:[servicePaths count]];
+    NSArray *serviceFiles = [AppServiceData serviceDataFiles:[self applicationSupportDirectory]];
+    services = [NSMutableArray arrayWithCapacity:[serviceFiles count]];
     int serviceIdx = 2;
-    for (NSString *servicePath in servicePaths) {
-        AppServiceData *service = [AppServiceData serviceDataWithContentsOfFile:servicePath];
+    for (NSString *serviceFile in serviceFiles) {
+        AppServiceData *service = [AppServiceData serviceDataWithContentsOfFile:serviceFile];
         NSMenuItem *serviceItem = [NSMenuItem new];
         [serviceItem setTitle:[service label]];
         [serviceItem setAction:@selector(onToggleItem:)];
-        [serviceItem setKeyEquivalent:[[service label] substringToIndex:1]];
+        [serviceItem setKeyEquivalent:[[[service label] substringToIndex:1] lowercaseString]];
+        [serviceItem setKeyEquivalentModifierMask:NSCommandKeyMask];
         [serviceItem setState:NSMixedState];
         if ([service plistPathExsists]) {
             [serviceItem setEnabled:YES];
@@ -68,7 +69,6 @@
         [services addObject:service];
         serviceIdx++;
     }
-    [self serviceFiles];
 }
 
 - (void)menuWillOpen:(NSMenu *)menu
@@ -210,20 +210,6 @@
         //NSLog(@"applicationSupportDirectory: %@", [error localizedDescription]);
         return nil;
     }
-}
-
-- (NSArray *)serviceFiles
-{
-    NSError *error;
-    NSString *directory = [self applicationSupportDirectory];
-    NSArray *serviceFiles = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directory error:&error];
-    NSMutableArray *servicePaths = [NSMutableArray arrayWithCapacity:[serviceFiles count]];
-    for (NSString *serviceFile in serviceFiles) {
-        if ([[serviceFile pathExtension] isEqual: @"plist"]) {
-            [servicePaths addObject:[directory stringByAppendingPathComponent:serviceFile]];
-        }
-    }
-    return servicePaths;
 }
 
 @end
