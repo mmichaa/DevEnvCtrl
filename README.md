@@ -9,6 +9,6 @@ DevEnvToggle StatusBar-Application for Mac OS X
 ## Features
 
 * Easily control your development-related LaunchDaemons!
-  * ... configurable and extendable via plist-files! *(feature coming soon)*
+  * ... configurable and extendable via plist-files!
 * Handels attaching and detaching of corresponding DiskImages for you!
   * ... encrypted DiskImages too! *(catches password from KeyChain)*
