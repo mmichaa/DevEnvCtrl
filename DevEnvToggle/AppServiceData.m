@@ -26,6 +26,20 @@
     return serviceFiles;
 }
 
++ (BOOL)serviceDataInstall:(NSString *)directory
+{
+    NSError *error = nil;
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSArray *plists = [bundle pathsForResourcesOfType:@"plist" inDirectory:nil];
+    for (NSString *source in plists) {
+        NSString *destination = [directory stringByAppendingPathComponent:[source lastPathComponent]];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:destination]) {
+            [[NSFileManager defaultManager] copyItemAtPath:source toPath:destination error:&error];
+        }
+    }
+    return true;
+}
+
 + (id)serviceDataWithDictionary:(NSDictionary *)dictionary
 {
     return [[self alloc] initWithDictionary:dictionary];

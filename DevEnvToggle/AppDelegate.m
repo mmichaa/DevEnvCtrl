@@ -48,6 +48,7 @@
     [statusItem setToolTip:@"DevEnvToggle"];
     [statusItem setHighlightMode:YES];;
     // read service-plists and add menu-items
+    [AppServiceData serviceDataInstall:[self applicationSupportDirectory]];
     NSArray *serviceFiles = [AppServiceData serviceDataFiles:[self applicationSupportDirectory]];
     services = [NSMutableArray arrayWithCapacity:[serviceFiles count]];
     int serviceIdx = 2;
