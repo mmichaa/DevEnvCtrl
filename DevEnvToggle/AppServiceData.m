@@ -26,18 +26,22 @@
     return serviceFiles;
 }
 
-+ (BOOL)serviceDataInstall:(NSString *)directory
++ (NSArray *)serviceDataInstall:(NSString *)directory
 {
     NSError *error = nil;
     NSBundle *bundle = [NSBundle mainBundle];
     NSArray *plists = [bundle pathsForResourcesOfType:@"plist" inDirectory:nil];
+    NSMutableArray *serviceFiles = [NSMutableArray arrayWithCapacity:[plists count]];
     for (NSString *source in plists) {
         NSString *destination = [directory stringByAppendingPathComponent:[source lastPathComponent]];
         if (![[NSFileManager defaultManager] fileExistsAtPath:destination]) {
             [[NSFileManager defaultManager] copyItemAtPath:source toPath:destination error:&error];
+            if (error == nil) {
+                [serviceFiles addObject:destination];
+            }
         }
     }
-    return true;
+    return serviceFiles;
 }
 
 + (id)serviceDataWithDictionary:(NSDictionary *)dictionary
@@ -261,8 +265,16 @@
 
 -(BOOL)diskimageDetach
 {
+    NSString *disk = [cache valueForKey:@"disk"];
+    if (disk == nil) {
+        if ([self diskimageAttach]) {
+            disk = [cache valueForKey:@"disk"]; 
+        } else {
+            return false;
+        }
+    }
     NSTask *task = [NSTask new];
-    NSArray *args = [NSArray arrayWithObjects:@"detach", [cache valueForKey:@"disk"], nil];
+    NSArray *args = [NSArray arrayWithObjects:@"detach", disk, nil];
     [task setLaunchPath:@"/usr/bin/hdiutil"];
     [task setArguments:args];
     [task setStandardOutput:[NSFileHandle fileHandleWithNullDevice]];

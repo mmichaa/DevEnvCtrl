@@ -15,7 +15,7 @@
 @property NSMutableDictionary *cache;
 
 + (NSArray *)serviceDataFiles:(NSString *)directory;
-+ (BOOL)serviceDataInstall:(NSString *)directory;
++ (NSArray *)serviceDataInstall:(NSString *)directory;
 
 + (id)serviceDataWithDictionary:(NSDictionary *)dictionary;
 + (id)serviceDataWithContentsOfFile:(NSString *)path;

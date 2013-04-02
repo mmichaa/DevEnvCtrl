@@ -27,6 +27,7 @@
 		868882FC16F53FF8007F1270 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882FB16F53FF8007F1270 /* ServiceManagement.framework */; };
 		8688830016F54538007F1270 /* com.taktsoft.DevEnvHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 868882EA16F53913007F1270 /* com.taktsoft.DevEnvHelper */; };
 		86C98B9A16F6073400775447 /* AppServiceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C98B9916F6073400775447 /* AppServiceData.m */; };
+		86FC46D01707521300CF5FC9 /* AppServiceDiskImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FC46CF1707521300CF5FC9 /* AppServiceDiskImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		86C98B9916F6073400775447 /* AppServiceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServiceData.m; sourceTree = "<group>"; };
 		86C98B9B16F61A7C00775447 /* AppServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServiceHelper.h; sourceTree = "<group>"; };
 		86C98B9C16F61A7C00775447 /* AppServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServiceHelper.m; sourceTree = "<group>"; };
+		86FC46CE1707521300CF5FC9 /* AppServiceDiskImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServiceDiskImage.h; sourceTree = "<group>"; };
+		86FC46CF1707521300CF5FC9 /* AppServiceDiskImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServiceDiskImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +165,8 @@
 				860EA2781703D8D000C42A29 /* AppServiceChecker.m */,
 				86C98B9816F6073400775447 /* AppServiceData.h */,
 				86C98B9916F6073400775447 /* AppServiceData.m */,
+				86FC46CE1707521300CF5FC9 /* AppServiceDiskImage.h */,
+				86FC46CF1707521300CF5FC9 /* AppServiceDiskImage.m */,
 				8660B7F716ECCE3C00DA035F /* MainMenu.xib */,
 				8673E4CC16FC78A200DC67A3 /* Service Files */,
 				8660B7E916ECCE3C00DA035F /* Supporting Files */,
@@ -304,6 +309,7 @@
 				8660B7F616ECCE3C00DA035F /* AppDelegate.m in Sources */,
 				86C98B9A16F6073400775447 /* AppServiceData.m in Sources */,
 				860EA2791703D8D000C42A29 /* AppServiceChecker.m in Sources */,
+				86FC46D01707521300CF5FC9 /* AppServiceDiskImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
