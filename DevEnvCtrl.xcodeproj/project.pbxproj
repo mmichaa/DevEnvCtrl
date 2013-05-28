@@ -58,15 +58,15 @@
 		8601087216FBB6AF004C4D4C /* DevEnvIcon-White.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "DevEnvIcon-White.icns"; sourceTree = "<group>"; };
 		860EA2771703D8D000C42A29 /* AppServiceChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServiceChecker.h; sourceTree = "<group>"; };
 		860EA2781703D8D000C42A29 /* AppServiceChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServiceChecker.m; sourceTree = "<group>"; };
-		8660B7DF16ECCE3C00DA035F /* DevEnvToggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevEnvToggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8660B7DF16ECCE3C00DA035F /* DevEnvCtrl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevEnvCtrl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8660B7E216ECCE3C00DA035F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8660B7E516ECCE3C00DA035F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		8660B7E616ECCE3C00DA035F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8660B7E716ECCE3C00DA035F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		8660B7EA16ECCE3C00DA035F /* DevEnvToggle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DevEnvToggle-Info.plist"; sourceTree = "<group>"; };
+		8660B7EA16ECCE3C00DA035F /* DevEnvCtrl-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DevEnvCtrl-Info.plist"; sourceTree = "<group>"; };
 		8660B7EC16ECCE3C00DA035F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8660B7EE16ECCE3C00DA035F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8660B7F016ECCE3C00DA035F /* DevEnvToggle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DevEnvToggle-Prefix.pch"; sourceTree = "<group>"; };
+		8660B7F016ECCE3C00DA035F /* DevEnvCtrl-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DevEnvCtrl-Prefix.pch"; sourceTree = "<group>"; };
 		8660B7F216ECCE3C00DA035F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		8660B7F416ECCE3C00DA035F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8660B7F516ECCE3C00DA035F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 			children = (
 				8601087116FBB6AF004C4D4C /* DevEnvIcon-Black.icns */,
 				8601087216FBB6AF004C4D4C /* DevEnvIcon-White.icns */,
-				8660B7E816ECCE3C00DA035F /* DevEnvToggle */,
+				8660B7E816ECCE3C00DA035F /* DevEnvCtrl */,
 				868882ED16F53913007F1270 /* DevEnvHelper */,
 				8660B7E116ECCE3C00DA035F /* Frameworks */,
 				8660B7E016ECCE3C00DA035F /* Products */,
@@ -128,7 +128,7 @@
 		8660B7E016ECCE3C00DA035F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8660B7DF16ECCE3C00DA035F /* DevEnvToggle.app */,
+				8660B7DF16ECCE3C00DA035F /* DevEnvCtrl.app */,
 				868882EA16F53913007F1270 /* com.taktsoft.DevEnvHelper */,
 			);
 			name = Products;
@@ -156,7 +156,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		8660B7E816ECCE3C00DA035F /* DevEnvToggle */ = {
+		8660B7E816ECCE3C00DA035F /* DevEnvCtrl */ = {
 			isa = PBXGroup;
 			children = (
 				8660B7F416ECCE3C00DA035F /* AppDelegate.h */,
@@ -171,16 +171,17 @@
 				8673E4CC16FC78A200DC67A3 /* Service Files */,
 				8660B7E916ECCE3C00DA035F /* Supporting Files */,
 			);
+			name = DevEnvCtrl;
 			path = DevEnvToggle;
 			sourceTree = "<group>";
 		};
 		8660B7E916ECCE3C00DA035F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8660B7EA16ECCE3C00DA035F /* DevEnvToggle-Info.plist */,
+				8660B7EA16ECCE3C00DA035F /* DevEnvCtrl-Info.plist */,
 				8660B7EB16ECCE3C00DA035F /* InfoPlist.strings */,
 				8660B7EE16ECCE3C00DA035F /* main.m */,
-				8660B7F016ECCE3C00DA035F /* DevEnvToggle-Prefix.pch */,
+				8660B7F016ECCE3C00DA035F /* DevEnvCtrl-Prefix.pch */,
 				8660B7F116ECCE3C00DA035F /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -220,9 +221,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8660B7DE16ECCE3C00DA035F /* DevEnvToggle */ = {
+		8660B7DE16ECCE3C00DA035F /* DevEnvCtrl */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8660B7FC16ECCE3C00DA035F /* Build configuration list for PBXNativeTarget "DevEnvToggle" */;
+			buildConfigurationList = 8660B7FC16ECCE3C00DA035F /* Build configuration list for PBXNativeTarget "DevEnvCtrl" */;
 			buildPhases = (
 				8660B7DB16ECCE3C00DA035F /* Sources */,
 				8660B7DC16ECCE3C00DA035F /* Frameworks */,
@@ -234,9 +235,9 @@
 			dependencies = (
 				860EA2751703D65D00C42A29 /* PBXTargetDependency */,
 			);
-			name = DevEnvToggle;
+			name = DevEnvCtrl;
 			productName = DevEnvToggle;
-			productReference = 8660B7DF16ECCE3C00DA035F /* DevEnvToggle.app */;
+			productReference = 8660B7DF16ECCE3C00DA035F /* DevEnvCtrl.app */;
 			productType = "com.apple.product-type.application";
 		};
 		868882E916F53913007F1270 /* DevEnvHelper */ = {
@@ -264,7 +265,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Michael Nowak";
 			};
-			buildConfigurationList = 8660B7DA16ECCE3C00DA035F /* Build configuration list for PBXProject "DevEnvToggle" */;
+			buildConfigurationList = 8660B7DA16ECCE3C00DA035F /* Build configuration list for PBXProject "DevEnvCtrl" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -276,7 +277,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8660B7DE16ECCE3C00DA035F /* DevEnvToggle */,
+				8660B7DE16ECCE3C00DA035F /* DevEnvCtrl */,
 				868882E916F53913007F1270 /* DevEnvHelper */,
 			);
 		};
@@ -429,9 +430,9 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DevEnvToggle/DevEnvToggle-Prefix.pch";
-				INFOPLIST_FILE = "DevEnvToggle/DevEnvToggle-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "DevEnvToggle/DevEnvCtrl-Prefix.pch";
+				INFOPLIST_FILE = "DevEnvToggle/DevEnvCtrl-Info.plist";
+				PRODUCT_NAME = DevEnvCtrl;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -443,9 +444,9 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DevEnvToggle/DevEnvToggle-Prefix.pch";
-				INFOPLIST_FILE = "DevEnvToggle/DevEnvToggle-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "DevEnvToggle/DevEnvCtrl-Prefix.pch";
+				INFOPLIST_FILE = "DevEnvToggle/DevEnvCtrl-Info.plist";
+				PRODUCT_NAME = DevEnvCtrl;
 				STRIP_INSTALLED_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -492,7 +493,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8660B7DA16ECCE3C00DA035F /* Build configuration list for PBXProject "DevEnvToggle" */ = {
+		8660B7DA16ECCE3C00DA035F /* Build configuration list for PBXProject "DevEnvCtrl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8660B7FA16ECCE3C00DA035F /* Debug */,
@@ -501,7 +502,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8660B7FC16ECCE3C00DA035F /* Build configuration list for PBXNativeTarget "DevEnvToggle" */ = {
+		8660B7FC16ECCE3C00DA035F /* Build configuration list for PBXNativeTarget "DevEnvCtrl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8660B7FD16ECCE3C00DA035F /* Debug */,

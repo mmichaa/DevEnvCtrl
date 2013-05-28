@@ -28,7 +28,7 @@ on run (volumeName)
 			set background picture of opts to file "VolumeBackground.png"
 			
 			-- Positioning
-			set position of item "DevEnvToggle" to {150, 245}
+			set position of item "DevEnvCtrl" to {150, 245}
 			
 			-- Application Link Clause
 			set position of item "Applications" to {450, 245}

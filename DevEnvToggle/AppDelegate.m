@@ -45,7 +45,7 @@
     [statusItem setAlternateImage:statusLightImage];
     [statusItem setMenu:statusMenu];
     [statusItem setAction:@selector(onClick:)];
-    [statusItem setToolTip:@"DevEnvToggle"];
+    [statusItem setToolTip:@"DevEnvCtrl"];
     [statusItem setHighlightMode:YES];;
     // read service-plists and add menu-items
     NSArray *serviceFiles = [AppServiceData serviceDataFiles:[self applicationSupportDirectory]];

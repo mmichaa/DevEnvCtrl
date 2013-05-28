@@ -1,6 +1,6 @@
-# DevEnvToggle
+# DevEnvCtrl
 
-DevEnvToggle StatusBar-Application for Mac OS X
+DevEnvCtrl StatusBar-Application for Mac OS X
 
 ## Control your development environment
 
