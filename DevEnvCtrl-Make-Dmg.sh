@@ -1,4 +1,4 @@
-#!/Bin/bash
+#!/bin/bash
 
 SRC_FOLDER="$1"
 VOLUME_NAME="$1"

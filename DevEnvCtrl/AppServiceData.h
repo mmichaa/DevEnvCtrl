@@ -1,6 +1,6 @@
 //
 //  AppServiceData.h
-//  DevEnvToggle
+//  DevEnvCtrl
 //
 //  Created by Michael Nowak on 17.03.13.
 //  Copyright (c) 2013 Michael Nowak. All rights reserved.
@@ -39,5 +39,8 @@
 -(BOOL)diskimageAttachOptionsWithEncryption;
 -(BOOL)diskimageAttach;
 -(BOOL)diskimageDetach;
+
+-(BOOL)contextUser;
+-(BOOL)contextRoot;
 
 @end

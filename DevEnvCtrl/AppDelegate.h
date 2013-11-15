@@ -1,6 +1,6 @@
 //
 //  AppDelegate.h
-//  DevEnvToggle
+//  DevEnvCtrl
 //
 //  Created by Michael Nowak on 10.03.13.
 //  Copyright (c) 2013 Michael Nowak. All rights reserved.
@@ -21,7 +21,8 @@
     IBOutlet NSImage *statusLightImage;
 
     NSMutableArray *services;
-    AppServiceHelper *serviceHelperProxy;
+    AppServiceHelper *serviceHelperRoot;
+    AppServiceHelper *serviceHelperUser;
 }
 
 - (void)menuWillOpen:(NSMenu *)menu;

@@ -1,6 +1,6 @@
 //
 //  AppServiceChecker.h
-//  DevEnvToggle
+//  DevEnvCtrl
 //
 //  Created by Michael Nowak on 28.03.13.
 //  Copyright (c) 2013 Michael Nowak. All rights reserved.

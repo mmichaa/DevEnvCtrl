@@ -1,6 +1,6 @@
 //
 //  AppServiceData.m
-//  DevEnvToggle
+//  DevEnvCtrl
 //
 //  Created by Michael Nowak on 17.03.13.
 //  Copyright (c) 2013 Michael Nowak. All rights reserved.
@@ -81,7 +81,7 @@
 
 - (NSString *)path
 {
-    return [data valueForKey:@"path"];
+    return [[data valueForKey:@"path"] stringByExpandingTildeInPath];
 }
 
 - (NSURL *)pathAsURL
@@ -285,6 +285,16 @@
     } else {
         return false;
     }
+}
+
+-(BOOL)contextUser
+{
+    return [[data valueForKey:@"path"] hasPrefix:@"~/"];
+}
+
+-(BOOL)contextRoot
+{
+    return ![self contextUser];
 }
 
 @end

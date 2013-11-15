@@ -5,8 +5,8 @@
 	<key>label</key>
 	<string>PostgreSQL</string>
 	<key>job</key>
-	<string>com.edb.launchd.postgresql</string>
+	<string>homebrew.mxcl.postgresql</string>
 	<key>path</key>
-	<string>/Library/LaunchDaemons</string>
+	<string>~/Library/LaunchAgents</string>
 </dict>
 </plist>

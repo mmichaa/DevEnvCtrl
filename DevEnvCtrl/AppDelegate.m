@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  DevEnvToggle
+//  DevEnvCtrl
 //
 //  Created by Michael Nowak on 10.03.13.
 //  Copyright (c) 2013 Michael Nowak. All rights reserved.
@@ -80,7 +80,15 @@
     // Set States
     for (AppServiceData *service in services) {
         NSMenuItem *serviceItem = [menu itemWithTitle:[service label]];
-        [serviceItem setState:[serviceHelperProxy status:[service job]] ? NSOnState : NSOffState];
+
+        AppServiceHelper *serviceHelper = nil;
+        if ([service contextRoot]) {
+            serviceHelper = serviceHelperRoot;
+        } else {
+            serviceHelper = serviceHelperUser;
+        }
+
+        [serviceItem setState:[serviceHelper status:[service job]] ? NSOnState : NSOffState];
     }
 }
 
@@ -98,9 +106,17 @@
         if ([service label] == [serviceItem title]) {
             NSString *job = [service job];
             NSString *plistPath = [service plistPath];
-            if([serviceHelperProxy status:job]) {
+
+            AppServiceHelper *serviceHelper = nil;
+            if ([service contextRoot]) {
+                serviceHelper = serviceHelperRoot;
+            } else {
+                serviceHelper = serviceHelperUser;
+            }
+
+            if([serviceHelper status:job]) {
                 NSLog(@"Stoping ToggleItem '%@' ...", job);
-                [serviceHelperProxy stop:plistPath];
+                [serviceHelper stop:plistPath];
                 if ([service diskimage]) {
                     if (![service diskimageDetach]) {
                         NSLog(@"Error detaching DiskImage!");
@@ -116,7 +132,7 @@
                     }
                 }
                 NSLog(@"Starting ToggleItem '%@' ...", job);
-                [serviceHelperProxy start:plistPath];
+                [serviceHelper start:plistPath];
             }
             break;
         }
@@ -136,9 +152,11 @@
             [self installHelperWithLabel:serviceHelperLabel];
         }
     }
-    // Connect to Helper
+    // Connect to Root Helper
     NSConnection *c = [NSConnection connectionWithRegisteredName:serviceHelperMachLabel host:nil];
-    serviceHelperProxy = (AppServiceHelper *)[c rootProxy];
+    serviceHelperRoot = (AppServiceHelper *)[c rootProxy];
+    // Init User Helper
+    serviceHelperUser = [AppServiceHelper serviceHelperWithUserDomain];
 }
 
 - (AuthorizationRef)createAuthRef

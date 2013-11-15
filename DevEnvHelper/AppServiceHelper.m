@@ -1,6 +1,6 @@
 //
 //  AppServiceHelper.m
-//  DevEnvToggle
+//  DevEnvCtrl
 //
 //  Created by Michael Nowak on 17.03.13.
 //  Copyright (c) 2013 Michael Nowak. All rights reserved.
@@ -10,9 +10,37 @@
 
 @implementation AppServiceHelper
 
+@synthesize domain;
+
++ (id)serviceHelperWithSystemDomain
+{
+    return [[self alloc] initWithSystemDomain];
+}
+
+- (id)initWithSystemDomain
+{
+    if (self = [super init]) {
+        domain = kSMDomainSystemLaunchd;
+    }
+    return self;
+}
+
++ (id)serviceHelperWithUserDomain
+{
+    return [[self alloc] initWithUserDomain];
+}
+
+- (id)initWithUserDomain
+{
+    if (self = [super init]) {
+        domain = kSMDomainUserLaunchd;
+    }
+    return self;
+}
+
 - (BOOL)status:(NSString *)job
 {
-    NSDictionary *plist = (__bridge NSDictionary*)SMJobCopyDictionary(kSMDomainSystemLaunchd, (__bridge CFStringRef)job);
+    NSDictionary *plist = (__bridge NSDictionary*)SMJobCopyDictionary([self domain], (__bridge CFStringRef)job);
     if (plist) {
         return true;
     } else {

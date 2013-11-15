@@ -29,7 +29,7 @@ int main(int argc, const char * argv[])
         NSMachPort *rp = [[NSMachPort alloc] initWithMachPort:mp];
         NSConnection *c = [NSConnection connectionWithReceivePort:rp sendPort:nil];
         
-        AppServiceHelper *obj = [AppServiceHelper new];
+        AppServiceHelper *obj = [AppServiceHelper serviceHelperWithSystemDomain];
         [c setRootObject:obj];
         
         [[NSRunLoop currentRunLoop] run];

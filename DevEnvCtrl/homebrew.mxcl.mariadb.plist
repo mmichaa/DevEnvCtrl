@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>label</key>
-	<string>MySQL</string>
+	<string>MariaDB</string>
 	<key>job</key>
-	<string>com.mysql.launchd.mysqld</string>
+	<string>homebrew.mxcl.mariadb</string>
 	<key>path</key>
-	<string>/Library/LaunchDaemons</string>
+	<string>~/Library/LaunchAgents</string>
 </dict>
 </plist>
