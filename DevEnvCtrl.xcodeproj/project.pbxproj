@@ -12,10 +12,7 @@
 		860EA2761703D67100C42A29 /* AppServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C98B9C16F61A7C00775447 /* AppServiceHelper.m */; };
 		860EA2791703D8D000C42A29 /* AppServiceChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 860EA2781703D8D000C42A29 /* AppServiceChecker.m */; };
 		861D0FEF16F7542000A7E9A3 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882FB16F53FF8007F1270 /* ServiceManagement.framework */; };
-		864CA7F91836D29600E59437 /* homebrew.mxcl.mariadb.plist in Resources */ = {isa = PBXBuildFile; fileRef = 864CA7F71836D29600E59437 /* homebrew.mxcl.mariadb.plist */; };
-		864CA7FA1836D29600E59437 /* homebrew.mxcl.postgresql.plist in Resources */ = {isa = PBXBuildFile; fileRef = 864CA7F81836D29600E59437 /* homebrew.mxcl.postgresql.plist */; };
 		864CA7FB1836D75A00E59437 /* AppServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C98B9C16F61A7C00775447 /* AppServiceHelper.m */; };
-		8660B7E316ECCE3C00DA035F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8660B7E216ECCE3C00DA035F /* Cocoa.framework */; };
 		8660B7ED16ECCE3C00DA035F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8660B7EB16ECCE3C00DA035F /* InfoPlist.strings */; };
 		8660B7EF16ECCE3C00DA035F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8660B7EE16ECCE3C00DA035F /* main.m */; };
 		8660B7F316ECCE3C00DA035F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8660B7F116ECCE3C00DA035F /* Credits.rtf */; };
@@ -27,8 +24,15 @@
 		868882FA16F53FE6007F1270 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882F916F53FE6007F1270 /* Security.framework */; };
 		868882FC16F53FF8007F1270 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882FB16F53FF8007F1270 /* ServiceManagement.framework */; };
 		8688830016F54538007F1270 /* com.taktsoft.DevEnvHelper in CopyFiles */ = {isa = PBXBuildFile; fileRef = 868882EA16F53913007F1270 /* com.taktsoft.DevEnvHelper */; };
+		869649921837CC83003828C1 /* homebrew.service.mariadb.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8696498F1837CC83003828C1 /* homebrew.service.mariadb.plist */; };
+		869649931837CC83003828C1 /* homebrew.service.memcached.plist in Resources */ = {isa = PBXBuildFile; fileRef = 869649901837CC83003828C1 /* homebrew.service.memcached.plist */; };
+		869649941837CC83003828C1 /* homebrew.service.postgresql.plist in Resources */ = {isa = PBXBuildFile; fileRef = 869649911837CC83003828C1 /* homebrew.service.postgresql.plist */; };
 		86C98B9A16F6073400775447 /* AppServiceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 86C98B9916F6073400775447 /* AppServiceData.m */; };
-		86FC46D01707521300CF5FC9 /* AppServiceDiskImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 86FC46CF1707521300CF5FC9 /* AppServiceDiskImage.m */; };
+		86F824B01837D9A500828011 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F824A91837D6A600828011 /* SenTestingKit.framework */; };
+		86F824B61837D9A500828011 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86F824B41837D9A500828011 /* InfoPlist.strings */; };
+		86F824C01837DA2200828011 /* AppServiceData_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F824BF1837DA2200828011 /* AppServiceData_Tests.m */; };
+		86F824C11837DB3C00828011 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8660B7E216ECCE3C00DA035F /* Cocoa.framework */; };
+		86F824C31837DF8000828011 /* DevEnvCtrl_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F824C21837DF8000828011 /* DevEnvCtrl_Tests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 868882E916F53913007F1270;
 			remoteInfo = DevEnvHelper;
+		};
+		86F824BA1837D9A500828011 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8660B7D716ECCE3C00DA035F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8660B7DE16ECCE3C00DA035F;
+			remoteInfo = DevEnvCtrl;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -59,8 +70,6 @@
 		8601087216FBB6AF004C4D4C /* DevEnvIcon-White.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "DevEnvIcon-White.icns"; sourceTree = "<group>"; };
 		860EA2771703D8D000C42A29 /* AppServiceChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServiceChecker.h; sourceTree = "<group>"; };
 		860EA2781703D8D000C42A29 /* AppServiceChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServiceChecker.m; sourceTree = "<group>"; };
-		864CA7F71836D29600E59437 /* homebrew.mxcl.mariadb.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = homebrew.mxcl.mariadb.plist; sourceTree = "<group>"; };
-		864CA7F81836D29600E59437 /* homebrew.mxcl.postgresql.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = homebrew.mxcl.postgresql.plist; sourceTree = "<group>"; };
 		8660B7DF16ECCE3C00DA035F /* DevEnvCtrl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevEnvCtrl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8660B7E216ECCE3C00DA035F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8660B7E516ECCE3C00DA035F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -83,12 +92,20 @@
 		868882F816F539A4007F1270 /* DevEnvHelper-Launchd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DevEnvHelper-Launchd.plist"; sourceTree = "<group>"; };
 		868882F916F53FE6007F1270 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		868882FB16F53FF8007F1270 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		8696498F1837CC83003828C1 /* homebrew.service.mariadb.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = homebrew.service.mariadb.plist; sourceTree = "<group>"; };
+		869649901837CC83003828C1 /* homebrew.service.memcached.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = homebrew.service.memcached.plist; sourceTree = "<group>"; };
+		869649911837CC83003828C1 /* homebrew.service.postgresql.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = homebrew.service.postgresql.plist; sourceTree = "<group>"; };
 		86C98B9816F6073400775447 /* AppServiceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServiceData.h; sourceTree = "<group>"; };
 		86C98B9916F6073400775447 /* AppServiceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServiceData.m; sourceTree = "<group>"; };
 		86C98B9B16F61A7C00775447 /* AppServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServiceHelper.h; sourceTree = "<group>"; };
 		86C98B9C16F61A7C00775447 /* AppServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServiceHelper.m; sourceTree = "<group>"; };
-		86FC46CE1707521300CF5FC9 /* AppServiceDiskImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppServiceDiskImage.h; sourceTree = "<group>"; };
-		86FC46CF1707521300CF5FC9 /* AppServiceDiskImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServiceDiskImage.m; sourceTree = "<group>"; };
+		86F824A91837D6A600828011 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		86F824AF1837D9A500828011 /* DevEnvCtrl Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DevEnvCtrl Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86F824B31837D9A500828011 /* DevEnvCtrl Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DevEnvCtrl Tests-Info.plist"; sourceTree = "<group>"; };
+		86F824B51837D9A500828011 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		86F824B91837D9A500828011 /* DevEnvCtrl Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DevEnvCtrl Tests-Prefix.pch"; sourceTree = "<group>"; };
+		86F824BF1837DA2200828011 /* AppServiceData_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppServiceData_Tests.m; sourceTree = "<group>"; };
+		86F824C21837DF8000828011 /* DevEnvCtrl_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevEnvCtrl_Tests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +113,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86F824C11837DB3C00828011 /* Cocoa.framework in Frameworks */,
 				868882FC16F53FF8007F1270 /* ServiceManagement.framework in Frameworks */,
 				868882FA16F53FE6007F1270 /* Security.framework in Frameworks */,
-				8660B7E316ECCE3C00DA035F /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +128,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		86F824AC1837D9A500828011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86F824B01837D9A500828011 /* SenTestingKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -120,6 +145,7 @@
 				8601087116FBB6AF004C4D4C /* DevEnvIcon-Black.icns */,
 				8601087216FBB6AF004C4D4C /* DevEnvIcon-White.icns */,
 				8660B7E816ECCE3C00DA035F /* DevEnvCtrl */,
+				86F824B11837D9A500828011 /* DevEnvCtrl Tests */,
 				868882ED16F53913007F1270 /* DevEnvHelper */,
 				8660B7E116ECCE3C00DA035F /* Frameworks */,
 				8660B7E016ECCE3C00DA035F /* Products */,
@@ -131,6 +157,7 @@
 			children = (
 				8660B7DF16ECCE3C00DA035F /* DevEnvCtrl.app */,
 				868882EA16F53913007F1270 /* com.taktsoft.DevEnvHelper */,
+				86F824AF1837D9A500828011 /* DevEnvCtrl Tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,6 +165,7 @@
 		8660B7E116ECCE3C00DA035F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				86F824A91837D6A600828011 /* SenTestingKit.framework */,
 				868882FB16F53FF8007F1270 /* ServiceManagement.framework */,
 				868882F916F53FE6007F1270 /* Security.framework */,
 				8660B7E216ECCE3C00DA035F /* Cocoa.framework */,
@@ -166,13 +194,10 @@
 				860EA2781703D8D000C42A29 /* AppServiceChecker.m */,
 				86C98B9816F6073400775447 /* AppServiceData.h */,
 				86C98B9916F6073400775447 /* AppServiceData.m */,
-				86FC46CE1707521300CF5FC9 /* AppServiceDiskImage.h */,
-				86FC46CF1707521300CF5FC9 /* AppServiceDiskImage.m */,
 				8660B7F716ECCE3C00DA035F /* MainMenu.xib */,
 				8673E4CC16FC78A200DC67A3 /* Service Files */,
 				8660B7E916ECCE3C00DA035F /* Supporting Files */,
 			);
-			name = DevEnvCtrl;
 			path = DevEnvCtrl;
 			sourceTree = "<group>";
 		};
@@ -191,8 +216,9 @@
 		8673E4CC16FC78A200DC67A3 /* Service Files */ = {
 			isa = PBXGroup;
 			children = (
-				864CA7F71836D29600E59437 /* homebrew.mxcl.mariadb.plist */,
-				864CA7F81836D29600E59437 /* homebrew.mxcl.postgresql.plist */,
+				8696498F1837CC83003828C1 /* homebrew.service.mariadb.plist */,
+				869649901837CC83003828C1 /* homebrew.service.memcached.plist */,
+				869649911837CC83003828C1 /* homebrew.service.postgresql.plist */,
 				8673E4CD16FC78C000DC67A3 /* org.apache.service.httpd.plist */,
 			);
 			name = "Service Files";
@@ -215,6 +241,26 @@
 				868882F716F539A4007F1270 /* DevEnvHelper-Info.plist */,
 				868882F816F539A4007F1270 /* DevEnvHelper-Launchd.plist */,
 				868882F116F53913007F1270 /* DevEnvHelper-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		86F824B11837D9A500828011 /* DevEnvCtrl Tests */ = {
+			isa = PBXGroup;
+			children = (
+				86F824BF1837DA2200828011 /* AppServiceData_Tests.m */,
+				86F824C21837DF8000828011 /* DevEnvCtrl_Tests.m */,
+				86F824B21837D9A500828011 /* Supporting Files */,
+			);
+			path = "DevEnvCtrl Tests";
+			sourceTree = "<group>";
+		};
+		86F824B21837D9A500828011 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				86F824B31837D9A500828011 /* DevEnvCtrl Tests-Info.plist */,
+				86F824B41837D9A500828011 /* InfoPlist.strings */,
+				86F824B91837D9A500828011 /* DevEnvCtrl Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -257,6 +303,24 @@
 			productReference = 868882EA16F53913007F1270 /* com.taktsoft.DevEnvHelper */;
 			productType = "com.apple.product-type.tool";
 		};
+		86F824AE1837D9A500828011 /* DevEnvCtrl Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86F824BC1837D9A500828011 /* Build configuration list for PBXNativeTarget "DevEnvCtrl Tests" */;
+			buildPhases = (
+				86F824AB1837D9A500828011 /* Sources */,
+				86F824AC1837D9A500828011 /* Frameworks */,
+				86F824AD1837D9A500828011 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				86F824BB1837D9A500828011 /* PBXTargetDependency */,
+			);
+			name = "DevEnvCtrl Tests";
+			productName = "DevEnvCtrl Tests";
+			productReference = 86F824AF1837D9A500828011 /* DevEnvCtrl Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -265,6 +329,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Michael Nowak";
+				TargetAttributes = {
+					86F824AE1837D9A500828011 = {
+						TestTargetID = 8660B7DE16ECCE3C00DA035F;
+					};
+				};
 			};
 			buildConfigurationList = 8660B7DA16ECCE3C00DA035F /* Build configuration list for PBXProject "DevEnvCtrl" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -280,6 +349,7 @@
 			targets = (
 				8660B7DE16ECCE3C00DA035F /* DevEnvCtrl */,
 				868882E916F53913007F1270 /* DevEnvHelper */,
+				86F824AE1837D9A500828011 /* DevEnvCtrl Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -290,13 +360,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				8660B7ED16ECCE3C00DA035F /* InfoPlist.strings in Resources */,
+				869649921837CC83003828C1 /* homebrew.service.mariadb.plist in Resources */,
 				8660B7F316ECCE3C00DA035F /* Credits.rtf in Resources */,
 				8660B7F916ECCE3C00DA035F /* MainMenu.xib in Resources */,
 				8601087316FBB6AF004C4D4C /* DevEnvIcon-Black.icns in Resources */,
 				8601087416FBB6AF004C4D4C /* DevEnvIcon-White.icns in Resources */,
-				864CA7FA1836D29600E59437 /* homebrew.mxcl.postgresql.plist in Resources */,
+				869649931837CC83003828C1 /* homebrew.service.memcached.plist in Resources */,
 				8673E4CE16FC78C000DC67A3 /* org.apache.service.httpd.plist in Resources */,
-				864CA7F91836D29600E59437 /* homebrew.mxcl.mariadb.plist in Resources */,
+				869649941837CC83003828C1 /* homebrew.service.postgresql.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86F824AD1837D9A500828011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86F824B61837D9A500828011 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +391,6 @@
 				8660B7F616ECCE3C00DA035F /* AppDelegate.m in Sources */,
 				86C98B9A16F6073400775447 /* AppServiceData.m in Sources */,
 				860EA2791703D8D000C42A29 /* AppServiceChecker.m in Sources */,
-				86FC46D01707521300CF5FC9 /* AppServiceDiskImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +403,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		86F824AB1837D9A500828011 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86F824C31837DF8000828011 /* DevEnvCtrl_Tests.m in Sources */,
+				86F824C01837DA2200828011 /* AppServiceData_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -332,6 +419,11 @@
 			isa = PBXTargetDependency;
 			target = 868882E916F53913007F1270 /* DevEnvHelper */;
 			targetProxy = 860EA2741703D65D00C42A29 /* PBXContainerItemProxy */;
+		};
+		86F824BB1837D9A500828011 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8660B7DE16ECCE3C00DA035F /* DevEnvCtrl */;
+			targetProxy = 86F824BA1837D9A500828011 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -358,6 +450,14 @@
 				8660B7F816ECCE3C00DA035F /* en */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		86F824B41837D9A500828011 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				86F824B51837D9A500828011 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -431,6 +531,10 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DevEnvCtrl/DevEnvCtrl-Prefix.pch";
 				INFOPLIST_FILE = "DevEnvCtrl/DevEnvCtrl-Info.plist";
@@ -445,6 +549,10 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DevEnvCtrl/DevEnvCtrl-Prefix.pch";
 				INFOPLIST_FILE = "DevEnvCtrl/DevEnvCtrl-Info.plist";
@@ -492,6 +600,59 @@
 			};
 			name = Release;
 		};
+		86F824BD1837D9A500828011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DevEnvCtrl.app/Contents/MacOS/DevEnvCtrl";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DevEnvCtrl Tests/DevEnvCtrl Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "DevEnvCtrl Tests/DevEnvCtrl Tests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		86F824BE1837D9A500828011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DevEnvCtrl.app/Contents/MacOS/DevEnvCtrl";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DevEnvCtrl Tests/DevEnvCtrl Tests-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "DevEnvCtrl Tests/DevEnvCtrl Tests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -518,6 +679,15 @@
 			buildConfigurations = (
 				868882F516F53913007F1270 /* Debug */,
 				868882F616F53913007F1270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		86F824BC1837D9A500828011 /* Build configuration list for PBXNativeTarget "DevEnvCtrl Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				86F824BD1837D9A500828011 /* Debug */,
+				86F824BE1837D9A500828011 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
