@@ -9,6 +9,6 @@ DevEnvCtrl StatusBar-Application for Mac OS X
 ## Features
 
 * Easily control your development-related LaunchDaemons!
-  * ... configurable and extendable via plist-files!
+  * ... configure via plist-files!
 * Handels attaching and detaching of corresponding DiskImages for you!
-  * ... encrypted DiskImages too! *(catches password from KeyChain)*
+  * ... even encrypted DiskImages! *(fetches password from KeyChain)*
