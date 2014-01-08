@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>label</key>
+	<string>Redis</string>
+	<key>job</key>
+	<string>homebrew.mxcl.redis</string>
+	<key>path</key>
+	<string>~/Library/LaunchAgents</string>
+</dict>
+</plist>

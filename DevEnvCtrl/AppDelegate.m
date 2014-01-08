@@ -22,7 +22,8 @@
 @synthesize serviceHelperProxy;
 */
 
-- (void)awakeFromNib{
+- (void)awakeFromNib
+{
     NSBundle *bundle = [NSBundle mainBundle];
     NSArray *icons = [[[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"DevEnvIcon-Black" ofType:@"icns"]] representations];
     for (NSImageRep *iconRepresentation in icons) {
@@ -45,22 +46,26 @@
     [statusItem setAlternateImage:statusLightImage];
     [statusItem setMenu:statusMenu];
     [statusItem setAction:@selector(onClick:)];
-    [statusItem setToolTip:@"DevEnvCtrl"];
-    [statusItem setHighlightMode:YES];;
+    [statusItem setToolTip:@"DevEnvCtrl v1.3.3"];
+    [statusItem setHighlightMode:YES];
+
+    [self initServicesAndMenu];
+}
+
+- (void)initServicesAndMenu
+{
     // read service-plists and add menu-items
     NSArray *serviceFiles = [AppServiceData serviceDataFiles:[self applicationSupportDirectory]];
     if ([serviceFiles count] == 0) {
         serviceFiles = [AppServiceData serviceDataInstall:[self applicationSupportDirectory]];
     }
     services = [NSMutableArray arrayWithCapacity:[serviceFiles count]];
-    int serviceIdx = 2;
+    int serviceIdx = 0;
     for (NSString *serviceFile in serviceFiles) {
         AppServiceData *service = [AppServiceData serviceDataWithContentsOfFile:serviceFile];
         NSMenuItem *serviceItem = [NSMenuItem new];
         [serviceItem setTitle:[service label]];
         [serviceItem setAction:@selector(onToggleItem:)];
-        [serviceItem setKeyEquivalent:[[[service label] substringToIndex:1] lowercaseString]];
-        [serviceItem setKeyEquivalentModifierMask:NSCommandKeyMask];
         [serviceItem setState:NSMixedState];
         if ([service plistPathExsists]) {
             [serviceItem setEnabled:YES];
@@ -76,8 +81,7 @@
 
 - (void)menuWillOpen:(NSMenu *)menu
 {
-    NSLog(@"menuWillOpen: reading states and updating UI ...");
-    // Set States
+    // Update Menu States
     for (AppServiceData *service in services) {
         NSMenuItem *serviceItem = [menu itemWithTitle:[service label]];
 
@@ -92,15 +96,16 @@
     }
 }
 
-- (IBAction)onToggle:(id)sender {
-    for (AppServiceData *service in services) {
-        NSString *label = [service label];
-        NSMenuItem *serviceItem = [statusMenu itemWithTitle:label];
-        [self onToggleItem:serviceItem];
-    }
+- (IBAction)onAllOn:(id)sender
+{
 }
 
-- (IBAction)onToggleItem:(id)sender {
+- (IBAction)onAllOff:(id)sender
+{
+}
+
+- (IBAction)onToggleItem:(id)sender
+{
     NSMenuItem *serviceItem = sender;
     for (AppServiceData *service in services) {
         if ([service label] == [serviceItem title]) {
@@ -204,7 +209,7 @@
     } else {
         NSLog(@"Job '%@' not removed!", label);
     }
-     */
+    */
     result = SMJobBless(kSMDomainSystemLaunchd, (__bridge CFStringRef)label, authRef, &err);
     if (result) {
         NSLog(@"Job '%@' blessed!", label);

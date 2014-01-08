@@ -25,8 +25,10 @@
     AppServiceHelper *serviceHelperUser;
 }
 
+- (void)initServicesAndMenu;
 - (void)menuWillOpen:(NSMenu *)menu;
-- (IBAction)onToggle:(id)sender;
+- (IBAction)onAllOn:(id)sender;
+- (IBAction)onAllOff:(id)sender;
 - (IBAction)onToggleItem:(id)sender;
 
 - (AuthorizationRef)createAuthRef;

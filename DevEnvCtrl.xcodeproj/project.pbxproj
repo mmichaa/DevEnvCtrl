@@ -18,6 +18,8 @@
 		8660B7F316ECCE3C00DA035F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8660B7F116ECCE3C00DA035F /* Credits.rtf */; };
 		8660B7F616ECCE3C00DA035F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8660B7F516ECCE3C00DA035F /* AppDelegate.m */; };
 		8660B7F916ECCE3C00DA035F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8660B7F716ECCE3C00DA035F /* MainMenu.xib */; };
+		866BE5BD187DA359004C5FD9 /* homebrew.service.mongodb.plist in Resources */ = {isa = PBXBuildFile; fileRef = 866BE5BB187DA359004C5FD9 /* homebrew.service.mongodb.plist */; };
+		866BE5BE187DA359004C5FD9 /* homebrew.service.redis.plist in Resources */ = {isa = PBXBuildFile; fileRef = 866BE5BC187DA359004C5FD9 /* homebrew.service.redis.plist */; };
 		8673E4CE16FC78C000DC67A3 /* org.apache.service.httpd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8673E4CD16FC78C000DC67A3 /* org.apache.service.httpd.plist */; };
 		868882EC16F53913007F1270 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868882EB16F53913007F1270 /* Foundation.framework */; };
 		868882EF16F53913007F1270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 868882EE16F53913007F1270 /* main.m */; };
@@ -83,6 +85,8 @@
 		8660B7F416ECCE3C00DA035F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8660B7F516ECCE3C00DA035F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8660B7F816ECCE3C00DA035F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		866BE5BB187DA359004C5FD9 /* homebrew.service.mongodb.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = homebrew.service.mongodb.plist; sourceTree = "<group>"; };
+		866BE5BC187DA359004C5FD9 /* homebrew.service.redis.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = homebrew.service.redis.plist; sourceTree = "<group>"; };
 		8673E4CD16FC78C000DC67A3 /* org.apache.service.httpd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = org.apache.service.httpd.plist; sourceTree = "<group>"; };
 		868882EA16F53913007F1270 /* com.taktsoft.DevEnvHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = com.taktsoft.DevEnvHelper; sourceTree = BUILT_PRODUCTS_DIR; };
 		868882EB16F53913007F1270 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -145,7 +149,7 @@
 				8601087116FBB6AF004C4D4C /* DevEnvIcon-Black.icns */,
 				8601087216FBB6AF004C4D4C /* DevEnvIcon-White.icns */,
 				8660B7E816ECCE3C00DA035F /* DevEnvCtrl */,
-				86F824B11837D9A500828011 /* DevEnvCtrl Tests */,
+				86F824B11837D9A500828011 /* DevEnvCtrl-Tests */,
 				868882ED16F53913007F1270 /* DevEnvHelper */,
 				8660B7E116ECCE3C00DA035F /* Frameworks */,
 				8660B7E016ECCE3C00DA035F /* Products */,
@@ -216,6 +220,8 @@
 		8673E4CC16FC78A200DC67A3 /* Service Files */ = {
 			isa = PBXGroup;
 			children = (
+				866BE5BB187DA359004C5FD9 /* homebrew.service.mongodb.plist */,
+				866BE5BC187DA359004C5FD9 /* homebrew.service.redis.plist */,
 				8696498F1837CC83003828C1 /* homebrew.service.mariadb.plist */,
 				869649901837CC83003828C1 /* homebrew.service.memcached.plist */,
 				869649911837CC83003828C1 /* homebrew.service.postgresql.plist */,
@@ -245,13 +251,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		86F824B11837D9A500828011 /* DevEnvCtrl Tests */ = {
+		86F824B11837D9A500828011 /* DevEnvCtrl-Tests */ = {
 			isa = PBXGroup;
 			children = (
 				86F824BF1837DA2200828011 /* AppServiceData_Tests.m */,
 				86F824C21837DF8000828011 /* DevEnvCtrl_Tests.m */,
 				86F824B21837D9A500828011 /* Supporting Files */,
 			);
+			name = "DevEnvCtrl-Tests";
 			path = "DevEnvCtrl Tests";
 			sourceTree = "<group>";
 		};
@@ -363,10 +370,12 @@
 				869649921837CC83003828C1 /* homebrew.service.mariadb.plist in Resources */,
 				8660B7F316ECCE3C00DA035F /* Credits.rtf in Resources */,
 				8660B7F916ECCE3C00DA035F /* MainMenu.xib in Resources */,
+				866BE5BD187DA359004C5FD9 /* homebrew.service.mongodb.plist in Resources */,
 				8601087316FBB6AF004C4D4C /* DevEnvIcon-Black.icns in Resources */,
 				8601087416FBB6AF004C4D4C /* DevEnvIcon-White.icns in Resources */,
 				869649931837CC83003828C1 /* homebrew.service.memcached.plist in Resources */,
 				8673E4CE16FC78C000DC67A3 /* org.apache.service.httpd.plist in Resources */,
+				866BE5BE187DA359004C5FD9 /* homebrew.service.redis.plist in Resources */,
 				869649941837CC83003828C1 /* homebrew.service.postgresql.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
